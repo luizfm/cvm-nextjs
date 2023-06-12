@@ -1,5 +1,3 @@
-"use client";
-
 import { Player } from "@lottiefiles/react-lottie-player";
 
 type LottiesAnimationProps = {

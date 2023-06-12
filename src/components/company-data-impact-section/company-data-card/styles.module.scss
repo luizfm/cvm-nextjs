@@ -1,0 +1,29 @@
+@import '@styles/index.module.scss';
+
+.image-wrapper {
+  position: relative;
+  height: 38rem;
+
+
+  .photo {
+    object-fit: cover;
+  }
+
+  .data-text-wrapper {
+    position: absolute;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .data-text {
+      @include heading-lg-bold;
+      color: $white;
+    }
+  }
+}

@@ -2,13 +2,17 @@ import Image, { StaticImageData } from "next/image";
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import "swiper/css";
+import "swiper/css/pagination";
+
 import styles from "./styles.module.scss";
 
 type PhotoCarouselProps = {
   photos: StaticImageData[];
+  height?: number;
 };
 
-export function PhotoCarousel({ photos }: PhotoCarouselProps) {
+export function PhotoCarousel({ photos, height }: PhotoCarouselProps) {
   return (
     <Swiper
       modules={[Pagination, Autoplay]}
@@ -18,7 +22,7 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
     >
       {photos.map((photo) => (
         <SwiperSlide key={`${photo.src}`}>
-          <div className={styles["image-wrapper"]}>
+          <div className={styles["image-wrapper"]} style={{ height }}>
             <Image
               src={photo}
               alt=""
