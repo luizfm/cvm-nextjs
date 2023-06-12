@@ -1,0 +1,32 @@
+@import '../../styles/index.module.scss';
+
+.header-container {
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+
+  .nav-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8rem;
+    background-color: rgba(0,0,0, 0.15);
+  
+
+    .item-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 6.4rem;
+      width: 100%;
+      @include max-width;
+      @include body-lg;
+      letter-spacing: 3px;
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+}

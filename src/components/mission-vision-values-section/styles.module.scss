@@ -1,0 +1,16 @@
+@import '../../styles/index.module.scss';
+
+.mission-vision-values-container {
+  margin: 8rem 0;
+
+  .visually-hidden {
+    @include visually-hidden;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3.2rem;
+    @include max-width;
+  }
+}

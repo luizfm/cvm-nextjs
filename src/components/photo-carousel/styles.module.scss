@@ -1,0 +1,10 @@
+$height: calc(100vh - 8.7rem);
+
+.image-wrapper {
+  position: relative;
+  height: $height;
+
+  .photo {
+    object-fit: cover;
+  }
+}

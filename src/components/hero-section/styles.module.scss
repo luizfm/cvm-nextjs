@@ -1,0 +1,9 @@
+@import '../../styles/index.module.scss';
+
+$height: calc(100vh - 8.7rem);
+
+.hero-container {
+  height: $height;
+  width: 100vw;
+  position: relative;
+}

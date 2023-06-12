@@ -1,0 +1,59 @@
+@mixin body-sm {
+  font-size: 14px;
+  color: $color-gray-900;
+}
+
+@mixin body-sm-bold {
+  @include body-sm;
+  font-weight: 700;
+}
+
+@mixin body-md {
+  font-size: 16px;
+  color: $color-gray-900;
+}
+
+@mixin body-md-bold {
+  @include body-md;
+  font-weight: 700;
+}
+
+@mixin body-lg {
+  font-size: 18px;
+  color: $color-gray-900;
+}
+
+@mixin body-lg-bold {
+  @include body-lg;
+  font-weight: 700;
+}
+
+@mixin heading-sm {
+  font-size: 24px;
+  color: $color-gray-900;
+}
+
+@mixin heading-sm-bold {
+  @include heading-sm;
+  font-weight: 700;
+}
+
+@mixin heading-md {
+  font-size: 32px;
+  color: $color-gray-900;
+}
+
+@mixin heading-md-bold {
+  @include heading-md;
+  font-weight: 700;
+}
+
+@mixin heading-lg {
+  font-size: 40px;
+  color: $color-gray-900;
+}
+
+@mixin heading-lg-bold {
+  @include heading-lg;
+  font-weight: 700;
+}

@@ -1,0 +1,9 @@
+@import '@styles/index.module.scss';
+
+.company-values-container {
+  .list-item {
+    @include body-md;
+    list-style: disc;
+    margin-left: 2rem;
+  }
+}
