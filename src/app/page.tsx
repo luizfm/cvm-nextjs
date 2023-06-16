@@ -1,9 +1,13 @@
-"use client";
+import CompanyDataImpactSection from "@/components/home/company-data-impact-section";
+import { HelpSection } from "@/components/home/help-section";
+import HeroSection from "@/components/home/hero-section";
+import MissionVisionValuesSection from "@/components/home/mission-vision-values-section";
+import NewsSection from "@/components/home/news-section";
+import { Metadata } from "next";
 
-import CompanyDataImpactSection from "@/components/company-data-impact-section";
-import { HelpSection } from "@/components/help-section";
-import HeroSection from "@/components/hero-section";
-import MissionVisionValuesSection from "@/components/mission-vision-values-section";
+export const metadata: Metadata = {
+  title: "CVM | Home",
+};
 
 export default function Home() {
   return (
@@ -12,6 +16,7 @@ export default function Home() {
       <MissionVisionValuesSection />
       <CompanyDataImpactSection />
       <HelpSection />
+      <NewsSection />
     </>
   );
 }

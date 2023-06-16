@@ -1,0 +1,45 @@
+@import '@styles/index.module.scss';
+
+.footer-container {
+  padding: 4rem 0;
+  width: 100%;
+  background-color: $color-secondary-400;
+  color: $white;
+
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 3.2rem;
+    @include max-width;
+
+  
+    .footer-content {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      .address-contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 0.8rem;
+        @include body-sm-bold;
+        color: $white;
+    
+        .contact {
+          @include heading-sm-bold;
+          color: $white;
+        }
+      }
+    }
+
+    .copy-right {
+      @include body-md-bold;
+      color: $white;
+    }
+  }
+}

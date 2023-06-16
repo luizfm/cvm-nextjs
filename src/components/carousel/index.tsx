@@ -1,4 +1,5 @@
-import { Pagination, Autoplay, EffectFade } from "swiper";
+"use client";
+
 import { Swiper, SwiperProps, SwiperRef, SwiperSlide } from "swiper/react";
 
 import "swiper/css";

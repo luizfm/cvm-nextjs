@@ -1,0 +1,48 @@
+@import '@styles/index.module.scss';
+
+.news-section-container {
+  @include max-width;
+  padding: 6.4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3.2rem;
+  height: 100vh;
+
+  .news-section-title {
+    @include heading-md-bold;
+  }
+
+  .news-grid-tile {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: 1fr 4.8rem 1fr / repeat(3, 1fr);
+    grid-template-areas: 
+    'card-one card-one card-four' 
+    'card-one card-one card-five' 
+    'card-two card-three card-five';
+    gap: 1.6rem;
+
+    .card-one {
+      grid-area: card-one;
+    }
+
+    .card-two {
+      grid-area: card-two;
+    }
+
+    .card-three {
+      grid-area: card-three;
+    }
+
+    .card-four {
+      grid-area: card-four;
+    }
+
+    .card-five {
+      grid-area: card-five;
+    }
+  }
+}
+

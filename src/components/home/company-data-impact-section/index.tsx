@@ -1,9 +1,10 @@
+"use client";
+
 import { PHOTO_DATA_LIST, PHOTO_LIST } from "@/mocks";
-import { PhotoCarousel } from "../photo-carousel";
 
 import styles from "./styles.module.scss";
 import CompanyDataCard from "./company-data-card";
-import { Carousel } from "../carousel";
+import { Carousel } from "../../carousel";
 import { Autoplay, EffectFade, Pagination } from "swiper";
 
 const DATA_TEXTS = [

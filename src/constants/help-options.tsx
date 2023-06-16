@@ -1,10 +1,10 @@
-import BankDonationDialogContent from "@/components/help-section/help-dialogs/bank-donation-dialog-content";
-import EnergyDialogContent from "@/components/help-section/help-dialogs/energy-dialog-content";
-import MaintainerDialogContent from "@/components/help-section/help-dialogs/maintainer-dialog-content";
-import PagSeguroDialogContent from "@/components/help-section/help-dialogs/pag-seguro-dialog-content";
-import PrayDialogContent from "@/components/help-section/help-dialogs/pray-dialog-content";
-import ShareDialogContent from "@/components/help-section/help-dialogs/share-dialog-content";
-import VolunteerDialogContent from "@/components/help-section/help-dialogs/volunteer-dialog-content";
+import BankDonationDialogContent from "@/components/home/help-section/help-dialogs/bank-donation-dialog-content";
+import EnergyDialogContent from "@/components/home/help-section/help-dialogs/energy-dialog-content";
+import MaintainerDialogContent from "@/components/home/help-section/help-dialogs/maintainer-dialog-content";
+import PagSeguroDialogContent from "@/components/home/help-section/help-dialogs/pag-seguro-dialog-content";
+import PrayDialogContent from "@/components/home/help-section/help-dialogs/pray-dialog-content";
+import ShareDialogContent from "@/components/home/help-section/help-dialogs/share-dialog-content";
+import VolunteerDialogContent from "@/components/home/help-section/help-dialogs/volunteer-dialog-content";
 
 export enum HelpOptions {
   ENERGY = "energy",

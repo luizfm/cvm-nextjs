@@ -26,7 +26,7 @@ const MENU_ITEMS = [
   },
 ];
 
-export function Header() {
+function Header() {
   return (
     <header className={styles["header-container"]}>
       <nav className={styles["nav-wrapper"]}>
@@ -51,3 +51,5 @@ export function Header() {
     </header>
   );
 }
+
+export default Header;

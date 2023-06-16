@@ -1,15 +1,7 @@
-/**
- * Energia Elétrica
- * Trabalho voluntário
- * PagSeguro
- * Mantenedor
- * Doação
- * Oração
- * Divulgando o trabalho
- * Financeiramente
- */
-import { Carousel } from "../carousel";
-import Dialog from "../dialog";
+"use client";
+
+import { Carousel } from "../../carousel";
+import Dialog from "../../dialog";
 
 import styles from "./styles.module.scss";
 import { useCallback, useState } from "react";

@@ -1,7 +1,9 @@
-import Card from "../card";
-import styles from "./styles.module.scss";
+"use client";
+
 import CompanyValues from "./company-values";
-import LottiesAnimation from "../lotties-animation";
+import Card from "../../card";
+
+import styles from "./styles.module.scss";
 
 const CARDS_ITEMS = [
   {
