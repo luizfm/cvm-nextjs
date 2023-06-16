@@ -1,0 +1,33 @@
+@import '@styles/index.module.scss';
+
+.help-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem;
+  margin-bottom: 2rem;
+
+  .help-item-wrapper {
+    border-radius: 50%;
+    height: 50rem;
+    width: 50rem;
+    border: 0.1rem solid $color-secondary-500; 
+    background-color: $color-secondary-500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    column-gap: 3.2rem;
+    padding: 3.2rem;
+
+    .title {
+      @include heading-sm;
+      color: $white;
+    }
+
+    .help-button {
+      margin-top: 3.2rem;
+    }
+  }
+}

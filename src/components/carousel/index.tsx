@@ -1,27 +1,27 @@
 import { Pagination, Autoplay, EffectFade } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperProps, SwiperRef, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-type CarouselItem = {
+export type CarouselItem = {
   id: string;
   component: React.ReactNode;
 };
 
-type CarouselProps = {
-  items: CarouselItem[];
-};
+type CarouselProps = React.RefAttributes<SwiperRef> &
+  SwiperProps & {
+    items: CarouselItem[];
+  };
 
-export function Carousel({ items }: CarouselProps) {
+export function Carousel({ items, ...sliderProps }: CarouselProps) {
   return (
     <Swiper
-      modules={[EffectFade, Pagination, Autoplay]}
       navigation
       autoplay={{ delay: 5000 }}
-      effect={"fade"}
       pagination={{ clickable: true }}
+      {...sliderProps}
     >
       {items.map((item) => (
         <SwiperSlide key={item.id}>{item.component}</SwiperSlide>

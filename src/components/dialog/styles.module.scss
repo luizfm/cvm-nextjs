@@ -1,0 +1,53 @@
+@import '@styles/index.module.scss';
+
+.dialog-overlay {
+  background: rgba(0 0 0 / 0.5);
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+}
+
+.dialog-content {
+  position: fixed;
+  background-color: $white;
+  padding: 3.2rem;
+  border-radius: 1.6rem;
+  width: 100%;
+  max-width: 48rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+
+  .dialog-header {
+    padding-bottom: 1.6rem;
+    position: relative;
+    width: 100%;
+
+    .dialog-title {
+      @include heading-sm;
+    }
+    
+    .dialog-description {
+      @include body-md;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 0.2rem;
+      right: 0.2rem;
+      cursor: pointer;
+    }
+  }
+
+  .dialog-children {
+    border-top: 0.1rem solid $color-gray-100;
+    padding-top: 1.6rem;
+  }
+
+  .dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

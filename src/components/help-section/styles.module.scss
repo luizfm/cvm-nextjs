@@ -1,0 +1,13 @@
+@import '@styles/index.module.scss';
+
+.help-section {
+  @include max-width;
+  padding: 6.4rem 0;
+
+
+  .help-title {
+    @include heading-md;
+    margin-bottom: 4.8rem;
+    text-align: center;
+  }
+}
