@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 const MENU_ITEMS = [
   {
     label: "Quem somos",
-    path: "/about",
+    path: "/about-us",
   },
   {
     label: "Projetos",

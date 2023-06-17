@@ -1,0 +1,32 @@
+@import '@styles/index.module.scss';
+
+.about-us-container {
+  padding: 8rem 0;
+  margin-top: 8.75rem;
+
+  .page-title-container {
+    @include max-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem 0;
+    border-top: 0.3rem dotted black;
+    border-bottom: 0.3rem dotted black;
+
+
+    .about-us-title {
+      @include heading-lg-bold;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+  
+    .about-us-subtitle {
+      @include heading-lg;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-top: -2rem;
+      letter-spacing: -1px;
+    }
+  }
+}

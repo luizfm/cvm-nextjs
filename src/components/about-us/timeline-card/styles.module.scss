@@ -1,0 +1,72 @@
+@import '@styles/index.module.scss';
+
+.timeline-card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  column-gap: 2.4rem;
+  background-color: $white;
+
+  .timeline-card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 30rem;
+    width: 100%;
+
+    .timeline-card-title {
+      @include heading-md-bold;
+      color: $color-secondary-400;
+    }
+
+    .timeline-card-description {
+      @include body-lg;
+    }
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &::after {
+      content: '';
+      width: 0.3rem;
+      height: 100%;
+      background-color: transparent;
+    }
+
+    &.after-line {
+      &::after {
+        background-color: $color-primary-400;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 0.3rem;
+      height: 100%;
+      background-color: transparent;
+    }
+
+    &.before-line {
+      &::before {
+        background-color: $color-primary-400;
+      }
+    }
+
+    .icon-wrapper {
+      border-radius: 50%;
+      border: 1rem solid $color-primary-400;
+      padding: 2.4rem;
+    }
+  }
+}
+
+// Variants
+
+.right {
+  flex-direction: row-reverse;
+  background-color: $color-gray-50;
+}
