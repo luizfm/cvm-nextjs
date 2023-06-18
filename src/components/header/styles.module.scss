@@ -3,18 +3,16 @@
 .header-container {
   position: fixed;
   width: 100%;
-  background-color: transparent;
   backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0, 0.15);
   z-index: 4;
 
   .nav-wrapper {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 8rem;
-    background-color: rgba(0,0,0, 0.15);
-  
+    justify-content: space-between;
+    @include max-width;
 
     .item-list {
       display: flex;
@@ -22,11 +20,22 @@
       justify-content: center;
       column-gap: 6.4rem;
       width: 100%;
-      @include max-width;
       @include body-lg-bold;
       letter-spacing: 3px;
       color: $white;
       text-transform: uppercase;
+
+      .nav-item {
+        padding-bottom: 0.2rem;
+        transform: color 0.3s ease-in-out;
+        border-bottom: 0.1rem solid transparent;
+
+
+        &:hover, &.active {
+          color: $color-gray-50;
+          border-bottom-color: $color-gray-50;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,44 @@
+@import '@styles/index.module.scss';
+
+.project-card-container {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  width: 100%;
+  min-height: 420px;
+
+
+  .image-wrapper {
+    padding: 6.4rem;
+    min-height: inherit;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    position: relative;
+
+    .image {
+      object-fit: cover;
+    }
+  }
+
+  .project-card-data {
+    padding: 6.4rem;
+    flex: 1;
+
+    .project-card-title {
+      @include heading-md-bold;
+      letter-spacing: -2px;
+      margin-bottom: 1.6rem;
+    }
+
+    .project-card-description {
+      @include body-md;
+    }
+  }
+}
+
+// Variant 
+
+.right {
+  flex-direction: row-reverse;
+}

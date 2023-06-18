@@ -1,4 +1,4 @@
-import HelpItem from "@/components/home/help-section/help-item";
+import HelpItem from "@/components/help/help-item";
 import { HELP_ITEMS, HelpOptions } from "@/constants";
 
 type GetCarouselHelpItemsProps = {

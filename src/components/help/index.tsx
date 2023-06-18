@@ -1,15 +1,15 @@
 "use client";
 
-import { Carousel } from "../../carousel";
-import Dialog from "../../dialog";
-
-import styles from "./styles.module.scss";
 import { useCallback, useState } from "react";
 import { getCarouselHelpItems } from "@/utils/getCarouselHelpItems";
 import { Autoplay, Pagination } from "swiper";
 import { HELP_ITEMS_DIALOG_MAP, HelpOptions } from "@/constants";
+import Dialog from "@/components/dialog";
+import { Carousel } from "@/components/carousel";
 
-export function HelpSection() {
+import styles from "./styles.module.scss";
+
+export default function Help() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [dialogId, setDialogId] = useState<HelpOptions>(HelpOptions.DONATION);
 
@@ -35,7 +35,9 @@ export function HelpSection() {
 
   return (
     <section className={styles["help-section"]}>
-      <h2 className={styles["help-title"]}>Ajude</h2>
+      <h1 className={styles["help-title"]}>
+        Você pode ajudar como alguma das opções abaixo
+      </h1>
 
       <Carousel modules={[Pagination, Autoplay]} items={helpItems} />
 

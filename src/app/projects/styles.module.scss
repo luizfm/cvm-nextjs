@@ -1,0 +1,16 @@
+@import '@styles/index.module.scss';
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  @include max-width;
+  margin-top: 8.7rem;
+
+  padding: 6.4rem 0;
+
+  .page-title {
+    margin-bottom: 6.4rem;
+    @include heading-lg-bold;
+    text-align: center;
+  }
+}

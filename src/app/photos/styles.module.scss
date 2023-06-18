@@ -1,0 +1,16 @@
+@import '@styles/index.module.scss';
+
+.photos-container {
+  display: flex;
+  flex-direction: column;
+  @include max-width;
+  margin-top: 8.7rem;
+  padding: 6.4rem 0;
+  row-gap: 3.2rem;
+
+  .page-title {
+    @include heading-lg-bold;
+    text-align: center;
+    letter-spacing: -2px;
+  }
+}
