@@ -1,0 +1,15 @@
+@import '@styles/index.module.scss';
+
+.partners-section-container {
+  @include max-width;
+  padding: 8rem 0;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 6.4rem;
+
+  .section-title {
+    @include heading-sm-bold;
+    text-align: center;
+  }
+}

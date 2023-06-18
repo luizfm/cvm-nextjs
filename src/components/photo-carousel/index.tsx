@@ -16,7 +16,6 @@ export function PhotoCarousel({ photos, height }: PhotoCarouselProps) {
   return (
     <Swiper
       modules={[Pagination, Autoplay]}
-      navigation
       autoplay={{ delay: 5000 }}
       pagination={{ clickable: true }}
     >

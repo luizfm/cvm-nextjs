@@ -1,0 +1,58 @@
+@import '@styles/index.module.scss';
+
+.partners-card-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+  align-items: center;
+  justify-content: center;
+
+  .image-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image {
+      object-fit: contain;
+    }
+  }
+
+  &:not(.current) {
+    height: 24.3rem;
+
+    .logo-container {
+      height: 13.6rem;
+      width: 13.6rem;
+  
+      .image-wrapper {
+        .image {
+          border-radius: 0;
+          filter: grayscale(1);
+        }
+      }
+    }
+  }
+
+  &.current {
+    .logo-container {
+      display: flex;
+      align-items: center;
+      height: 19.2rem;
+      width: 19.2rem;
+      justify-content: center;
+      padding: 1.6rem;
+      border-radius: 50%;
+      background-color: $white;
+      overflow: hidden;
+      @include box-shadow;
+    }
+
+    .partners-name {
+      @include body-lg-bold;
+    }
+  }
+  
+}

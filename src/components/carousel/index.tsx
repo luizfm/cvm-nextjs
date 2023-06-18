@@ -19,7 +19,6 @@ type CarouselProps = React.RefAttributes<SwiperRef> &
 export function Carousel({ items, ...sliderProps }: CarouselProps) {
   return (
     <Swiper
-      navigation
       autoplay={{ delay: 5000 }}
       pagination={{ clickable: true }}
       {...sliderProps}
