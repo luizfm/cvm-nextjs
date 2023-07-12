@@ -5,4 +5,5 @@ export type Partners = {
   name: string;
   description: string;
   imageUrl: StaticImageData | string;
+  href: string
 }

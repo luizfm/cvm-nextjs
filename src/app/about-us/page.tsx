@@ -1,4 +1,4 @@
-import TimelineCard from "@/components/about-us/timeline-card/page";
+import TimelineCard from "@/components/about-us/timeline-card";
 import styles from "./styles.module.scss";
 import { TIMELINE_OPTIONS } from "@/constants";
 

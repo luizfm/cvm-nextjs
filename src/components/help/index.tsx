@@ -35,9 +35,7 @@ export default function Help() {
 
   return (
     <section className={styles["help-section"]}>
-      <h1 className={styles["help-title"]}>
-        Você pode ajudar como alguma das opções abaixo
-      </h1>
+      <h1 className={styles["help-title"]}>Escolha a melhor forma de doar</h1>
 
       <Carousel modules={[Pagination, Autoplay]} items={helpItems} />
 

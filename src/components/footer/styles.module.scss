@@ -3,7 +3,7 @@
 .footer-container {
   padding: 4rem 0;
   width: 100%;
-  background-color: $color-secondary-400;
+  background-color: $color-primary-600;
   color: $white;
 
   .footer-wrapper {
@@ -12,14 +12,15 @@
     justify-content: center;
     align-items: center;
     row-gap: 3.2rem;
-    @include max-width;
 
   
     .footer-content {
       display: flex;
       width: 100%;
-      justify-content: space-between;
+      justify-content: center;
+      column-gap: 32rem;
       align-items: center;
+      @include max-width;
 
       .address-contact-info {
         display: flex;
@@ -30,9 +31,49 @@
         @include body-sm-bold;
         color: $white;
     
-        .contact {
+        .address {
           @include heading-sm-bold;
           color: $white;
+        }
+      }
+
+      .connect-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 1.6rem;
+
+        .social-media-container {
+          display: flex;
+          align-items: flex-start;
+          column-gap: 1.6rem;
+        }
+  
+        .contact-container {
+          display: flex;
+          column-gap: 1.6rem;
+          .number-link {    
+            .number-info {
+              display: block;
+            }
+          }
+        }
+      }
+
+      .social-media-item, .number-link {
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.8rem;
+        transition: all 0.2s ease-in;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        &:hover {
+          backdrop-filter: blur(10px);
+          background-color: rgba(0,0,0, 0.15);
         }
       }
     }

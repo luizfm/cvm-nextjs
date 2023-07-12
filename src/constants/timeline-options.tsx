@@ -30,7 +30,7 @@ export const TIMELINE_OPTIONS = [
     id: "4",
     title: "1986",
     description:
-      "A instituição funda o Lar Jandira Jovita da Rosa, para atender ciranças de 0 a 18 anos.",
+      "A instituição funda o Lar Jandira Jovita da Rosa, para atender crianças de 0 a 18 anos.",
     variant: TimelineVariant.LEFT,
     animationUrl:
       "https://assets6.lottiefiles.com/packages/lf20_TwuPFLN49O.json",

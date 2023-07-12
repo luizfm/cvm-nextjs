@@ -19,7 +19,7 @@ const MENU_ITEMS = [
     path: "/projects",
   },
   {
-    label: "Como ajudar",
+    label: "Faça parte",
     path: "/help",
   },
   {

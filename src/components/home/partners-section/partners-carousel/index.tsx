@@ -11,14 +11,7 @@ import "swiper/css/navigation";
 
 import styles from "./styles.module.scss";
 
-import {
-  Autoplay,
-  FreeMode,
-  Navigation,
-  Pagination,
-  Swiper as SwiperOptions,
-  Thumbs,
-} from "swiper";
+import { Autoplay, Swiper as SwiperOptions, Thumbs } from "swiper";
 import PartnersCard, { PartnersCardVariant } from "../partners-card";
 import { Partners } from "@/types";
 
@@ -52,6 +45,7 @@ export default function PartnersCarousel({
               <PartnersCard
                 imageUrl={partner.imageUrl}
                 partnerName={partner.name}
+                href={partner.href}
                 variant={
                   isActive
                     ? PartnersCardVariant.Current
@@ -59,20 +53,6 @@ export default function PartnersCarousel({
                 }
               />
             )}
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <Swiper
-        loop={true}
-        onSwiper={setPartnersSwiper}
-        modules={[Thumbs]}
-        className={styles["main-swiper"]}
-      >
-        {carouselList.map((partner, index) => (
-          <SwiperSlide key={index}>
-            <div className={styles["partner-description-container"]}>
-              <p>{partner.description}</p>
-            </div>
           </SwiperSlide>
         ))}
       </Swiper>

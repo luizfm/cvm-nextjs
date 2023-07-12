@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 import CompanyDataCard from "./company-data-card";
 import { Carousel } from "../../carousel";
 import { Autoplay, EffectFade, Pagination } from "swiper";
+import { photos } from "@/constants/photos";
 
 const DATA_TEXTS = [
   "Esses são os números de 2020:",
@@ -17,7 +18,7 @@ const DATA_TEXTS = [
   "Distribuição de 209 kits alimentação, 260 cestas básicas e 300 aves natalinas",
 ];
 
-const COMPANY_DATA_CARD_LIST = PHOTO_DATA_LIST.map((photo, index) => ({
+const COMPANY_DATA_CARD_LIST = photos.slice(20, 26).map((photo, index) => ({
   id: `${index + 1}`,
   component: <CompanyDataCard image={photo} text={DATA_TEXTS[index]} />,
 }));

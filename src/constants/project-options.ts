@@ -3,15 +3,15 @@ import { PHOTO_LIST } from "@/mocks";
 export const PROJECT_OPTIONS = [
   {
     id: '1',
-    title: 'CAS - Centro de Atendimento social',
-    imageUrl: PHOTO_LIST[1],
-    description: 'Atende família em situação de vulnerabilidade social, com o objetivo de fortalecer os vínculos familiares e comunitários.',
-  },
-  {
-    id: '2',
     title: 'CEI - Centro educacional infantil',
     imageUrl: PHOTO_LIST[1],
     description: 'Trabalha a concepção sócio-interacionista, onde a criança é vista como um ser social, que interage com o meio e com as pessoas que o cercam, e que aprende através da interação com o outro.',
+  },
+  {
+    id: '2',
+    title: 'CAS - Centro de Atendimento social',
+    imageUrl: PHOTO_LIST[1],
+    description: 'Atende família em situação de vulnerabilidade social, com o objetivo de fortalecer os vínculos familiares e comunitários.',
   },
   {
     id: '3',

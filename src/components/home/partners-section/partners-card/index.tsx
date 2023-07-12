@@ -2,6 +2,7 @@ import classnames from "classnames";
 
 import styles from "./styles.module.scss";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 export enum PartnersCardVariant {
   Default = "",
@@ -13,16 +14,20 @@ type PartnersCardProps = {
   imageUrl: StaticImageData | string;
   className?: string;
   partnerName: string;
+  href: string;
 };
 
 function PartnersCard({
   variant = PartnersCardVariant.Default,
   partnerName,
   imageUrl,
+  href,
   className,
 }: PartnersCardProps) {
   return (
-    <div
+    <Link
+      href={href}
+      target="_blank"
       className={classnames(
         styles["partners-card-container"],
         styles[variant],
@@ -44,7 +49,7 @@ function PartnersCard({
       {variant === PartnersCardVariant.Current && (
         <p className={styles["partners-name"]}>{partnerName}</p>
       )}
-    </div>
+    </Link>
   );
 }
 

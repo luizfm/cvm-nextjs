@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## CVM - Creche vinde a mim as criancinhas
 
-## Getting Started
+### Remodelagem do sistema web
 
-First, run the development server:
+### 12.06
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [x] Cores do site devem seguir a mesma cartela de cores da empresa. Em especial, dar destaque para o azul.
+- [x] Ícones dos parceiros sem descrição e clicáveis
+- [x] Ícones das redes sociais devem estar no rodapé
+- [x] Adicionar whatsapp do telefone: Fixo, Administrativo, Bazar, CEI
+- [x] Na aba projetos, o primeiro que deve aparecer é o CEI.
+- [ ] O impacto social será uma arte. Devemos remover o carousel inicial
+- [ ] Faça parte no final de todas as páginas do site
+- [ ] Acrescentar a aba parceiros e contatos no header.
+- [x] Trocar o como ajudar para "Faça parte".
+- [ ] Quem somos deve possui mais itens: Vídeo institucional, História (Timeline?), Fotos das fundadoras, uma frase com foto do presidente voluntário
+- [ ] Missão, Visão, Valores: Ícones que passam para o lado (Carousel)?
+- [ ] Nossos números: Esses são os números do impacto social? 
+- [ ] Relatórios de transparência anual
+- [ ] Informações úteis: Matrícula Educanção Infantil, Lista de Espera, Matriculas nos projetos de Musicalização e Robótica
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Projetos / Programas
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+- [ ] CEI - Ícone clicável? 
+- [ ] [CEI] Resumo, resultados e fotos
+- [ ] CAS - Projetos de Musicalização e Robótica. Resumos, Resultados e Fotos (Esses projetos entram aqui?)
+- [ ] CDE - Não existe mais. Vale a pena colocar no site?
+- [ ] Bazar CVM - Projeto a parte? Resumo, Resultados e Fotos.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+### Faça parte
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] Faça parte no cabeçalho. Como assim?
+- [x] Escolha a melhor forma de doar
+- [ ] Na parte de ajuda "doando" trocar o texto e adicionar um ícone que ao clicar o usuário é redirecionado ao whatsapp administrativo.
+- [ ] Trocar o ícone da oração
+- [ ] Informar as mídias sociais dentro da opção de divulgação do trabalho.
+- [ ] Financeiramente agora conta com novas opções: Carnê de pagamento, PIX, PagSeguro (Já temos uma opçao a parte. Unimos com essa aqui?).
+- [ ] Nova opção: Participando do Bazar CVM.
+- [ ] Nova opção: Adotando uma ou mais crianças.
+- [ ] Nova opção: Patrocinando um projeto
