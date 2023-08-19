@@ -29,19 +29,9 @@ function Footer() {
                   target="_blank"
                 >
                   {socialMedia.icon}
-                </Link>
-              ))}
-            </div>
-            <div className={styles["contact-container"]}>
-              {WHATSAPP_NUMBER_OPTIONS.map((number) => (
-                <Link
-                  className={styles["number-link"]}
-                  key={number.title}
-                  href={number.href}
-                  target="_blank"
-                >
-                  <span className={styles["number-info"]}>{number.icon}</span>
-                  <span className={styles["number-info"]}>{number.title}</span>
+                  <span className={styles["icon-info"]}>
+                    {socialMedia.title}
+                  </span>
                 </Link>
               ))}
             </div>

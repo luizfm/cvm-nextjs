@@ -1,11 +1,12 @@
-import { Inter } from "next/font/google";
+import { Inter, Roboto, League_Spartan } from "next/font/google";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import classnames from "classnames";
 
 import styles from "./styles.module.scss";
 import "../styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const leagueSpartan = League_Spartan({ subsets: ["latin"], weight: "700" });
 
 export default function RootLayout({
   children,
@@ -14,7 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={classnames(
+          leagueSpartan.className,
+          styles["application-body"]
+        )}
+      >
         <Header />
         <main className={styles["main-content"]}>{children}</main>
         <Footer />

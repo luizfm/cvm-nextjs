@@ -1,9 +1,11 @@
 import Image, { StaticImageData } from "next/image";
-import { Pagination, Autoplay } from "swiper";
+import { Autoplay, EffectFade, Pagination } from "swiper";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css/effect-fade';
+import 'swiper/css/pagination';
 
 import styles from "./styles.module.scss";
 
@@ -15,9 +17,10 @@ type PhotoCarouselProps = {
 export function PhotoCarousel({ photos, height }: PhotoCarouselProps) {
   return (
     <Swiper
-      modules={[Pagination, Autoplay]}
+      modules={[EffectFade, Pagination, Autoplay]}
       autoplay={{ delay: 5000 }}
-      pagination={{ clickable: true }}
+      effect={"fade"}
+      fadeEffect={{ crossFade: true }}
     >
       {photos.map((photo) => (
         <SwiperSlide key={`${photo.src}`}>

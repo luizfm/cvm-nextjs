@@ -6,7 +6,7 @@
 
 - [x] Cores do site devem seguir a mesma cartela de cores da empresa. Em especial, dar destaque para o azul.
 - [x] Ícones dos parceiros sem descrição e clicáveis
-- [x] Ícones das redes sociais devem estar no rodapé
+- [x] Ícones das redes sociais devem estar no rodapé (Adicionar os ícones reais, não apenas os vetores).
 - [x] Adicionar whatsapp do telefone: Fixo, Administrativo, Bazar, CEI
 - [x] Na aba projetos, o primeiro que deve aparecer é o CEI.
 - [ ] O impacto social será uma arte. Devemos remover o carousel inicial

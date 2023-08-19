@@ -2,27 +2,29 @@
 
 import CompanyValues from "./company-values";
 import Card from "../../card";
+import VisionIcon from '@/assets/icons/vision-icon.png'
+import MissionIcon from '@/assets/icons/mission-icon.png'
+import ValuesIcon from '@/assets/icons/values-icon.png'
+
 
 import styles from "./styles.module.scss";
 
 const CARDS_ITEMS = [
   {
     title: "Missão",
-    animationUrl:
-      "https://assets10.lottiefiles.com/packages/lf20_Twpva09nPz.json",
+    imageUrl: MissionIcon,
     description:
       "Socializar o atendimento de qualidade á população de baixo poder aquisitivo, evangelizando-os nos ensinamentos de Jesus.",
   },
   {
     title: "Visão",
-    animationUrl:
-      "https://assets10.lottiefiles.com/packages/lf20_l6UZuXBusZ.json",
+    imageUrl: VisionIcon,
     description:
       "Ser referência na área social, buscando aprimoramento contínuo e inovando pelas ações",
   },
   {
     title: "Valores",
-    animationUrl: "https://assets7.lottiefiles.com/packages/lf20_wsdpcof3.json",
+    imageUrl: ValuesIcon,
     description: (
       <CompanyValues
         valuesList={[
@@ -50,7 +52,7 @@ export function MissionVisionValuesSection() {
             key={card.title}
             title={card.title}
             description={card.description}
-            animationUrl={card.animationUrl}
+            imageUrl={card.imageUrl}
           />
         ))}
       </div>

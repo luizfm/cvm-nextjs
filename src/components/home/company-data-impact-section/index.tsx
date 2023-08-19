@@ -1,36 +1,12 @@
-"use client";
-
-import { PHOTO_DATA_LIST, PHOTO_LIST } from "@/mocks";
-
 import styles from "./styles.module.scss";
-import CompanyDataCard from "./company-data-card";
-import { Carousel } from "../../carousel";
-import { Autoplay, EffectFade, Pagination } from "swiper";
-import { photos } from "@/constants/photos";
-
-const DATA_TEXTS = [
-  "Esses são os números de 2020:",
-  "Foram cerca de 466 crianças atendidas",
-  "Postadas 1.976 atividades na plataforma online",
-  "Distribuidas cerca de 260 cestas básicas através do projeto CVM de amparo a familia",
-  "O CDC atendeu 40 crianças",
-  "O CDE atendeu 58 crianças",
-  "Distribuição de 209 kits alimentação, 260 cestas básicas e 300 aves natalinas",
-];
-
-const COMPANY_DATA_CARD_LIST = photos.slice(20, 26).map((photo, index) => ({
-  id: `${index + 1}`,
-  component: <CompanyDataCard image={photo} text={DATA_TEXTS[index]} />,
-}));
+import DataImpactImage from "@/assets/images/data-impact.png";
+import Image from "next/image";
 
 function CompanyDataImpactSection() {
   return (
     <section className={styles["company-data-impact-section-container"]}>
-      <Carousel
-        items={COMPANY_DATA_CARD_LIST}
-        modules={[EffectFade, Pagination, Autoplay]}
-        effect={"fade"}
-      />
+      <h2 className={styles["section-title"]}>Impacto Social</h2>
+      <Image src={DataImpactImage} alt="" className={styles["image"]} />
     </section>
   );
 }

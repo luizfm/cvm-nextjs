@@ -3,9 +3,8 @@
 .header-container {
   position: fixed;
   width: 100%;
-  backdrop-filter: blur(10px);
-  background-color: rgba(0,0,0, 0.15);
   z-index: 4;
+  background-color: $white;
 
   .nav-wrapper {
     width: 100%;
@@ -22,8 +21,6 @@
       width: 100%;
       @include body-lg-bold;
       letter-spacing: 3px;
-      color: $white;
-      text-transform: uppercase;
 
       .nav-item {
         padding-bottom: 0.2rem;
@@ -32,8 +29,8 @@
 
 
         &:hover, &.active {
-          color: $color-gray-50;
-          border-bottom-color: $color-gray-50;
+          color: $color-gray-500;
+          border-bottom-color: $color-gray-500;
         }
       }
     }
