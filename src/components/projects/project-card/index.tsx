@@ -1,20 +1,20 @@
-import classnames from "classnames";
-import Image, { StaticImageData } from "next/image";
+import classnames from 'classnames'
+import Image, { StaticImageData } from 'next/image'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 export enum ProjectCardVariant {
-  LEFT = "left",
-  RIGHT = "right",
+  LEFT = 'left',
+  RIGHT = 'right',
 }
 
 type ProjectCardProps = {
-  title: string;
-  description: string;
-  imageUrl: StaticImageData | string;
-  className?: string;
-  variant?: ProjectCardVariant;
-};
+  title: string
+  description: string
+  imageUrl: StaticImageData | string
+  className?: string
+  variant?: ProjectCardVariant
+}
 
 function ProjectCard({
   description,
@@ -26,28 +26,28 @@ function ProjectCard({
   return (
     <div
       className={classnames(
-        styles["project-card-container"],
+        styles['project-card-container'],
         styles[variant],
-        className
+        className,
       )}
     >
-      <div className={styles["image-wrapper"]}>
+      <div className={styles['image-wrapper']}>
         <Image
           src={imageUrl}
           alt=""
           fill
           quality={100}
-          className={styles["image"]}
+          className={styles.image}
         />
       </div>
-      <dl className={styles["project-card-data"]}>
-        <dt className={styles["project-card-title"]}>
+      <dl className={styles['project-card-data']}>
+        <dt className={styles['project-card-title']}>
           <i>{title}</i>
         </dt>
-        <dd className={styles["project-card-description"]}>{description}</dd>
+        <dd className={styles['project-card-description']}>{description}</dd>
       </dl>
     </div>
-  );
+  )
 }
 
-export default ProjectCard;
+export default ProjectCard

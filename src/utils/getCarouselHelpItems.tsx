@@ -1,9 +1,9 @@
-import HelpItem from "@/components/help/help-item";
-import { HELP_ITEMS, HelpOptions } from "@/constants";
+import HelpItem from '@/components/help/help-item'
+import { HELP_ITEMS, HelpOptions } from '@/constants'
 
 type GetCarouselHelpItemsProps = {
-  onHelpClick: (id: HelpOptions) => void;
-};
+  onHelpClick: (id: HelpOptions) => void
+}
 
 export const getCarouselHelpItems = ({
   onHelpClick,
@@ -18,5 +18,5 @@ export const getCarouselHelpItems = ({
         onButtonClick={() => onHelpClick(item.id)}
       />
     ),
-  }));
-};
+  }))
+}

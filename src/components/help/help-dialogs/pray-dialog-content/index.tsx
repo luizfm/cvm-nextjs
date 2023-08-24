@@ -8,7 +8,7 @@ export function PrayDialogContent() {
         favor de todos os atendidos.
       </p>
     </div>
-  );
+  )
 }
 
-export default PrayDialogContent;
+export default PrayDialogContent

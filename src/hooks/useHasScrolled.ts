@@ -1,18 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from 'react'
 
 export default function useHasScrolled() {
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
-      const scrolled = window.scrollY > 0;
+      const scrolled = window.scrollY > 0
       if (scrolled !== hasScrolled) {
-        setHasScrolled(scrolled);
+        setHasScrolled(scrolled)
       }
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [hasScrolled]);
+    }
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [hasScrolled])
 
-  return hasScrolled;
+  return hasScrolled
 }

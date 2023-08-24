@@ -7,7 +7,7 @@ export function MaintainerDialogContent() {
         valor de acordo com suas condições.
       </p>
     </div>
-  );
+  )
 }
 
-export default MaintainerDialogContent;
+export default MaintainerDialogContent

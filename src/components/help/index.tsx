@@ -1,41 +1,41 @@
-"use client";
+'use client'
 
-import { useCallback, useState } from "react";
-import { getCarouselHelpItems } from "@/utils/getCarouselHelpItems";
-import { Autoplay, Pagination } from "swiper";
-import { HELP_ITEMS_DIALOG_MAP, HelpOptions } from "@/constants";
-import Dialog from "@/components/dialog";
-import { Carousel } from "@/components/carousel";
+import { useCallback, useState } from 'react'
+import { getCarouselHelpItems } from '@/utils/getCarouselHelpItems'
+import { Autoplay, Pagination } from 'swiper'
+import { HELP_ITEMS_DIALOG_MAP, HelpOptions } from '@/constants'
+import Dialog from '@/components/dialog'
+import { Carousel } from '@/components/carousel'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 export default function Help() {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [dialogId, setDialogId] = useState<HelpOptions>(HelpOptions.DONATION);
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [dialogId, setDialogId] = useState<HelpOptions>(HelpOptions.DONATION)
 
   const onOpenDialog = useCallback(() => {
-    setIsDialogOpen((prevValue) => !prevValue);
-  }, []);
+    setIsDialogOpen((prevValue) => !prevValue)
+  }, [])
 
   const onHelpClick = useCallback(
     (id: HelpOptions) => {
-      setDialogId(id);
-      onOpenDialog();
+      setDialogId(id)
+      onOpenDialog()
     },
-    [onOpenDialog]
-  );
+    [onOpenDialog],
+  )
 
-  const helpItems = getCarouselHelpItems({ onHelpClick });
+  const helpItems = getCarouselHelpItems({ onHelpClick })
 
   const {
     content,
     title,
-    description = "",
-  } = HELP_ITEMS_DIALOG_MAP[dialogId as HelpOptions];
+    description = '',
+  } = HELP_ITEMS_DIALOG_MAP[dialogId as HelpOptions]
 
   return (
-    <section className={styles["help-section"]}>
-      <h1 className={styles["help-title"]}>Escolha a melhor forma de doar</h1>
+    <section className={styles['help-section']}>
+      <h1 className={styles['help-title']}>Escolha a melhor forma de doar</h1>
 
       <Carousel modules={[Pagination, Autoplay]} items={helpItems} />
 
@@ -49,5 +49,5 @@ export default function Help() {
         </Dialog>
       )}
     </section>
-  );
+  )
 }

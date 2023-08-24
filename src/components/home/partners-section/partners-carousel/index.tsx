@@ -1,33 +1,31 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/thumbs";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css'
+import 'swiper/css/free-mode'
+import 'swiper/css/thumbs'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
-import { Autoplay, Swiper as SwiperOptions, Thumbs } from "swiper";
-import PartnersCard, { PartnersCardVariant } from "../partners-card";
-import { Partners } from "@/types";
+import { Autoplay, Swiper as SwiperOptions, Thumbs } from 'swiper'
+import PartnersCard, { PartnersCardVariant } from '../partners-card'
+import { Partners } from '@/types'
 
 type PartnersCarouselProps = {
-  carouselList: Partners[];
-};
+  carouselList: Partners[]
+}
 
 export default function PartnersCarousel({
   carouselList,
 }: PartnersCarouselProps) {
-  const [partnersSwiper, setPartnersSwiper] = useState<SwiperOptions | null>(
-    null
-  );
+  const [partnersSwiper] = useState<SwiperOptions | null>(null)
 
   return (
-    <section className={styles["partners-container"]}>
+    <section className={styles['partners-container']}>
       <Swiper
         thumbs={{ swiper: partnersSwiper }}
         loop={true}
@@ -57,5 +55,5 @@ export default function PartnersCarousel({
         ))}
       </Swiper>
     </section>
-  );
+  )
 }

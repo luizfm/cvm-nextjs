@@ -38,13 +38,13 @@ export function VolunteerDialogContent() {
         remuneração. Lei Nº 9.608, de 18 de Fevereiro de 1998.
       </p>
       <p>
-        {" "}
+        {' '}
         Seja você também um Voluntário Você está disposto a ser um voluntário.
         Nós precisamos do seu trabalho. Entre em contato conosco, através do
         48-3357-9400, teremos o maior prazer em atendê-lo.
       </p>
     </div>
-  );
+  )
 }
 
-export default VolunteerDialogContent;
+export default VolunteerDialogContent

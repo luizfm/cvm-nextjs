@@ -1,17 +1,17 @@
-import * as RadixDialog from "@radix-ui/react-dialog";
+import * as RadixDialog from '@radix-ui/react-dialog'
 
-import styles from "./styles.module.scss";
-import { X } from "@phosphor-icons/react";
-import Button from "../button";
+import styles from './styles.module.scss'
+import { X } from '@phosphor-icons/react'
+import Button from '../button'
 
 type DialogProps = {
-  title: string;
-  description?: string;
-  children: React.ReactNode;
-  onOpenChange: () => void;
-  hasCloseButton?: boolean;
-  hasConfirmButton?: boolean;
-};
+  title: string
+  description?: string
+  children: React.ReactNode
+  onOpenChange: () => void
+  hasCloseButton?: boolean
+  hasConfirmButton?: boolean
+}
 
 export function Dialog({
   title,
@@ -24,31 +24,31 @@ export function Dialog({
   return (
     <RadixDialog.Root open onOpenChange={onOpenChange}>
       <RadixDialog.Portal>
-        <RadixDialog.Overlay className={styles["dialog-overlay"]} />
-        <RadixDialog.Content className={styles["dialog-content"]}>
-          <header className={styles["dialog-header"]}>
+        <RadixDialog.Overlay className={styles['dialog-overlay']} />
+        <RadixDialog.Content className={styles['dialog-content']}>
+          <header className={styles['dialog-header']}>
             <RadixDialog.Title>{title}</RadixDialog.Title>
             {description && (
               <RadixDialog.Description>{description}</RadixDialog.Description>
             )}
             {hasCloseButton && (
-              <RadixDialog.Close asChild className={styles["close-button"]}>
+              <RadixDialog.Close asChild className={styles['close-button']}>
                 <X size={16} weight="bold" />
               </RadixDialog.Close>
             )}
           </header>
 
-          <div className={styles["dialog-children"]}>{children}</div>
+          <div className={styles['dialog-children']}>{children}</div>
 
           {hasConfirmButton && (
-            <footer className={styles["dialog-footer"]}>
+            <footer className={styles['dialog-footer']}>
               <Button>Ok</Button>
             </footer>
           )}
         </RadixDialog.Content>
       </RadixDialog.Portal>
     </RadixDialog.Root>
-  );
+  )
 }
 
-export default Dialog;
+export default Dialog

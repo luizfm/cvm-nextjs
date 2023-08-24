@@ -6,7 +6,7 @@ export function DonationDialogContent() {
         pessoal/Material de Escritório/Utensílios em geral/Móveis e afins, etç.
       </p>
     </div>
-  );
+  )
 }
 
-export default DonationDialogContent;
+export default DonationDialogContent

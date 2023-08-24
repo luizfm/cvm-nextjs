@@ -1,35 +1,31 @@
-"use client";
+'use client'
 
-import { FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
-import styles from "./styles.module.scss";
-import Link from "next/link";
-import {
-  SOCIAL_MEDIA_OPTIONS,
-  WHATSAPP_NUMBER_OPTIONS,
-} from "@/constants/social-media-options";
+import styles from './styles.module.scss'
+import Link from 'next/link'
+import { SOCIAL_MEDIA_OPTIONS } from '@/constants/social-media-options'
 
 function Footer() {
   return (
-    <footer className={styles["footer-container"]}>
-      <div className={styles["footer-wrapper"]}>
-        <div className={styles["footer-content"]}>
-          <div className={styles["address-contact-info"]}>
-            <p className={styles["address"]}>Contato</p>
+    <footer className={styles['footer-container']}>
+      <div className={styles['footer-wrapper']}>
+        <div className={styles['footer-content']}>
+          <div className={styles['address-contact-info']}>
+            <p className={styles.address}>Contato</p>
             <p>Rua Otto Júlio Malina - 1306, Ipiranga - São José - SC.</p>
             <p>(48) 3357-9400</p>
             <p>comunicacaosocialcvm@floripa.com.br</p>
           </div>
-          <div className={styles["connect-container"]}>
-            <div className={styles["social-media-container"]}>
+          <div className={styles['connect-container']}>
+            <div className={styles['social-media-container']}>
               {SOCIAL_MEDIA_OPTIONS.map((socialMedia) => (
                 <Link
-                  className={styles["social-media-item"]}
+                  className={styles['social-media-item']}
                   key={socialMedia.title}
                   href={socialMedia.href}
                   target="_blank"
                 >
                   {socialMedia.icon}
-                  <span className={styles["icon-info"]}>
+                  <span className={styles['icon-info']}>
                     {socialMedia.title}
                   </span>
                 </Link>
@@ -48,13 +44,13 @@ function Footer() {
           referrerPolicy="no-referrer-when-downgrade"
         />
 
-        <p className={styles["copy-right"]}>
+        <p className={styles['copy-right']}>
           Copyright © 2023 - CVM - Todos os direitos reservados - Desenvolvido
           por estudantes da IESGF
         </p>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

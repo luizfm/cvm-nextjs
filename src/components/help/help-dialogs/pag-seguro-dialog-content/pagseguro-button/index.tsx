@@ -1,10 +1,10 @@
-"use client";
+'use client'
 
-import Button from "@/components/button";
+import Button from '@/components/button'
 
 type PagseguroButtonProps = {
-  className?: string;
-};
+  className?: string
+}
 
 function PagseguroButton({ className }: PagseguroButtonProps) {
   return (
@@ -23,7 +23,7 @@ function PagseguroButton({ className }: PagseguroButtonProps) {
       <input type="hidden" name="iot" value="button" />
       <Button type="submit">Doar</Button>
     </form>
-  );
+  )
 }
 
-export default PagseguroButton;
+export default PagseguroButton

@@ -29,7 +29,7 @@ export function EnergyDialogContent() {
         maiores informações, ou através da própria Celesc e OI.
       </p>
     </div>
-  );
+  )
 }
 
-export default EnergyDialogContent;
+export default EnergyDialogContent

@@ -1,40 +1,40 @@
-import Image, { StaticImageData } from "next/image";
-import { Autoplay, EffectFade, Pagination } from "swiper";
+import Image, { StaticImageData } from 'next/image'
+import { Autoplay, EffectFade, Pagination } from 'swiper'
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import "swiper/css";
-import 'swiper/css/effect-fade';
-import 'swiper/css/pagination';
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/pagination'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 type PhotoCarouselProps = {
-  photos: StaticImageData[];
-  height?: number;
-};
+  photos: StaticImageData[]
+  height?: number
+}
 
 export function PhotoCarousel({ photos, height }: PhotoCarouselProps) {
   return (
     <Swiper
       modules={[EffectFade, Pagination, Autoplay]}
       autoplay={{ delay: 5000 }}
-      effect={"fade"}
+      effect={'fade'}
       fadeEffect={{ crossFade: true }}
     >
       {photos.map((photo) => (
         <SwiperSlide key={`${photo.src}`}>
-          <div className={styles["image-wrapper"]} style={{ height }}>
+          <div className={styles['image-wrapper']} style={{ height }}>
             <Image
               src={photo}
               alt=""
               fill
               quality={100}
-              className={styles["photo"]}
+              className={styles.photo}
             />
           </div>
         </SwiperSlide>
       ))}
     </Swiper>
-  );
+  )
 }

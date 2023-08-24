@@ -1,4 +1,4 @@
-import LottiesAnimation from "@/components/lotties-animation";
+import LottiesAnimation from '@/components/lotties-animation'
 
 export function ShareDialogContent() {
   return (
@@ -9,7 +9,7 @@ export function ShareDialogContent() {
       </p>
       <LottiesAnimation src="https://assets6.lottiefiles.com/packages/lf20_bxcpovue.json" />
     </div>
-  );
+  )
 }
 
-export default ShareDialogContent;
+export default ShareDialogContent

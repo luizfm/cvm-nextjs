@@ -1,110 +1,110 @@
-"use client";
+'use client'
 
-import BankDonationDialogContent from "@/components/help/help-dialogs/bank-donation-dialog-content";
-import EnergyDialogContent from "@/components/help/help-dialogs/energy-dialog-content";
-import MaintainerDialogContent from "@/components/help/help-dialogs/maintainer-dialog-content";
-import PagSeguroDialogContent from "@/components/help/help-dialogs/pag-seguro-dialog-content";
-import PrayDialogContent from "@/components/help/help-dialogs/pray-dialog-content";
-import ShareDialogContent from "@/components/help/help-dialogs/share-dialog-content";
-import VolunteerDialogContent from "@/components/help/help-dialogs/volunteer-dialog-content";
+import BankDonationDialogContent from '@/components/help/help-dialogs/bank-donation-dialog-content'
+import EnergyDialogContent from '@/components/help/help-dialogs/energy-dialog-content'
+import MaintainerDialogContent from '@/components/help/help-dialogs/maintainer-dialog-content'
+import PagSeguroDialogContent from '@/components/help/help-dialogs/pag-seguro-dialog-content'
+import PrayDialogContent from '@/components/help/help-dialogs/pray-dialog-content'
+import ShareDialogContent from '@/components/help/help-dialogs/share-dialog-content'
+import VolunteerDialogContent from '@/components/help/help-dialogs/volunteer-dialog-content'
 
 export enum HelpOptions {
-  ENERGY = "energy",
-  VOLUNTEER_WORK = "volunteer-work",
-  PAGSEGURO = "pagseguro",
-  MAINTAINER = "maintainer",
-  DONATION = "donation",
-  PRAY = "pray",
-  SHARE = "share",
-  BANK_DONATION = "bank-donation",
+  ENERGY = 'energy',
+  VOLUNTEER_WORK = 'volunteer-work',
+  PAGSEGURO = 'pagseguro',
+  MAINTAINER = 'maintainer',
+  DONATION = 'donation',
+  PRAY = 'pray',
+  SHARE = 'share',
+  BANK_DONATION = 'bank-donation',
 }
 
 export const HELP_ITEMS = [
   {
     id: HelpOptions.ENERGY,
-    title: "Energia Elétrica",
+    title: 'Energia Elétrica',
     animationUrl:
-      "https://assets7.lottiefiles.com/private_files/lf30_iecf0ukj.json",
+      'https://assets7.lottiefiles.com/private_files/lf30_iecf0ukj.json',
   },
   {
     id: HelpOptions.VOLUNTEER_WORK,
-    title: "Trabalho voluntário",
+    title: 'Trabalho voluntário',
     animationUrl:
-      "https://assets2.lottiefiles.com/packages/lf20_IXyhboPtFQ.json",
+      'https://assets2.lottiefiles.com/packages/lf20_IXyhboPtFQ.json',
   },
   {
     id: HelpOptions.PAGSEGURO,
-    title: "PagSeguro",
-    animationUrl: "https://assets1.lottiefiles.com/packages/lf20_7ShNC4.json",
+    title: 'PagSeguro',
+    animationUrl: 'https://assets1.lottiefiles.com/packages/lf20_7ShNC4.json',
   },
   {
     id: HelpOptions.MAINTAINER,
-    title: "Mantenedor",
-    animationUrl: "https://assets5.lottiefiles.com/packages/lf20_hpx8arg2.json",
+    title: 'Mantenedor',
+    animationUrl: 'https://assets5.lottiefiles.com/packages/lf20_hpx8arg2.json',
   },
   {
     id: HelpOptions.DONATION,
-    title: "Doação",
-    animationUrl: "https://assets5.lottiefiles.com/packages/lf20_udTJtk.json",
+    title: 'Doação',
+    animationUrl: 'https://assets5.lottiefiles.com/packages/lf20_udTJtk.json',
   },
   {
     id: HelpOptions.PRAY,
-    title: "Oração",
-    animationUrl: "https://assets8.lottiefiles.com/packages/lf20_osjq2dmb.json",
+    title: 'Oração',
+    animationUrl: 'https://assets8.lottiefiles.com/packages/lf20_osjq2dmb.json',
   },
   {
     id: HelpOptions.SHARE,
-    title: "Divulgando o trabalho",
-    animationUrl: "https://assets9.lottiefiles.com/packages/lf20_9ti102vm.json",
+    title: 'Divulgando o trabalho',
+    animationUrl: 'https://assets9.lottiefiles.com/packages/lf20_9ti102vm.json',
   },
   {
     id: HelpOptions.BANK_DONATION,
-    title: "Financeiramente",
+    title: 'Financeiramente',
     animationUrl:
-      "https://assets2.lottiefiles.com/packages/lf20_WdDBKqWxXW.json",
+      'https://assets2.lottiefiles.com/packages/lf20_WdDBKqWxXW.json',
   },
-];
+]
 
 type HelpITemsDialogMapProps = {
   [key in HelpOptions]: {
-    title: string;
-    description?: string;
-    content: JSX.Element;
-  };
-};
+    title: string
+    description?: string
+    content: JSX.Element
+  }
+}
 
 export const HELP_ITEMS_DIALOG_MAP: HelpITemsDialogMapProps = {
   [HelpOptions.ENERGY]: {
-    title: "Energia Elétrica",
-    description: "CELESC",
+    title: 'Energia Elétrica',
+    description: 'CELESC',
     content: <EnergyDialogContent />,
   },
   [HelpOptions.VOLUNTEER_WORK]: {
-    title: "Trabalho voluntário",
+    title: 'Trabalho voluntário',
     content: <VolunteerDialogContent />,
   },
   [HelpOptions.PAGSEGURO]: {
-    title: "PagSeguro",
+    title: 'PagSeguro',
     content: <PagSeguroDialogContent />,
   },
   [HelpOptions.MAINTAINER]: {
-    title: "Mantenedor",
+    title: 'Mantenedor',
     content: <MaintainerDialogContent />,
   },
   [HelpOptions.DONATION]: {
-    title: "Doação",
+    title: 'Doação',
     content: <EnergyDialogContent />,
   },
   [HelpOptions.PRAY]: {
-    title: "Oração",
+    title: 'Oração',
     content: <PrayDialogContent />,
   },
   [HelpOptions.SHARE]: {
-    title: "Divulgando o trabalho",
+    title: 'Divulgando o trabalho',
     content: <ShareDialogContent />,
   },
   [HelpOptions.BANK_DONATION]: {
-    title: "Doação financeira",
+    title: 'Doação financeira',
     content: <BankDonationDialogContent />,
   },
-};
+}

@@ -5,7 +5,7 @@ export function BankDonationDialogContent() {
       <p>Agência 5248-5</p>
       <p>Conta Corrente: 90246-2</p>
     </div>
-  );
+  )
 }
 
-export default BankDonationDialogContent;
+export default BankDonationDialogContent
