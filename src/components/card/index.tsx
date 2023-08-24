@@ -25,7 +25,8 @@ export function Card({
           <Image
             className={styles["image"]}
             src={imageUrl}
-            fill
+            height={200}
+            width={200}
             alt=""
             quality={100}
           />

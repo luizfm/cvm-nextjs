@@ -6,17 +6,32 @@ $height: calc(100vh - 8.7rem);
   height: $height;
   width: 100vw;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
   margin-top: 8.7rem;
   column-gap: 6.4rem;
-  background-image: url('../../../assets/images/hero/hero-background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 -50px;
 
   .carousel-wrapper {
-    width: 800px;
+    height: 100%;
+    width: 100%;
+
+    .image-shadow {
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.4);
+
+      .hero-title {
+        color: white;
+        font-size: 9.2rem;
+        text-align: center;
+
+        .title-bold {
+          color: $color-brand-alternative-200;
+        }
+      }
+    }
   }
 }

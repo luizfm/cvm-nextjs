@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import classnames from "classnames";
 
-import CompanyLogo from "@/assets/svg/cvm-logo.svg";
+import CompanyLogo from "@/assets/images/logo/cvm-logo-new.png";
 
 import styles from "./styles.module.scss";
 
@@ -34,14 +34,16 @@ function Header() {
   return (
     <header className={styles["header-container"]}>
       <nav className={styles["nav-wrapper"]}>
-        <Link href="/">
+        <div className={styles['logo-wrapper']}>
+        <Link href="/" className={styles['logo-link']}>
           <Image
             src={CompanyLogo}
             alt="Uma mão segurando várias crianças"
-            width={80}
+            width={200}
             height={80}
           />
         </Link>
+        </div>
         <ul className={styles["item-list"]}>
           {MENU_ITEMS.map((item) => (
             <li

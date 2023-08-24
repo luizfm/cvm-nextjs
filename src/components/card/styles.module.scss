@@ -8,10 +8,14 @@
   @include box-shadow;
 
   .image-wrapper {
-    height: 40.2rem;
+    height: 25.2rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .image {
+      margin: 0;
       object-fit: cover;
       border-radius: 0.8rem;
     }
