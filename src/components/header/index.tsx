@@ -26,6 +26,10 @@ const MENU_ITEMS = [
     label: 'Fotos',
     path: '/photos',
   },
+  {
+    label: 'Login',
+    path: '/login',
+  },
 ]
 
 function Header() {

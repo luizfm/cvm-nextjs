@@ -6,7 +6,7 @@ import { SpinnerGap } from '@phosphor-icons/react'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string
-  variant?: 'primary'
+  variant?: 'primary' | 'secondary'
   type?: 'button' | 'submit'
   loading?: boolean
   disabled?: boolean
