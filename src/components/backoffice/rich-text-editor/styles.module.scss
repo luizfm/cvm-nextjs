@@ -1,0 +1,18 @@
+@import '@styles/index.module.scss';
+
+.rich-text-editor-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+
+  .label {
+    &.label-editor-error {
+      color: $variant-error;
+    }
+  }
+
+  .editor-wrapper-error {
+    border: 0.1rem solid $variant-error;
+    border-radius: 0.8rem;
+  }
+}

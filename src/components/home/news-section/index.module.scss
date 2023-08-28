@@ -24,23 +24,23 @@
     'card-two card-three card-five';
     gap: 1.6rem;
 
-    .card-one {
+    .card-1 {
       grid-area: card-one;
     }
 
-    .card-two {
+    .card-2 {
       grid-area: card-two;
     }
 
-    .card-three {
+    .card-3 {
       grid-area: card-three;
     }
 
-    .card-four {
+    .card-4 {
       grid-area: card-four;
     }
 
-    .card-five {
+    .card-5 {
       grid-area: card-five;
     }
   }

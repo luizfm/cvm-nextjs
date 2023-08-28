@@ -40,12 +40,14 @@ function Header() {
       <nav className={styles['nav-wrapper']}>
         <div className={styles['logo-wrapper']}>
           <Link href="/" className={styles['logo-link']}>
-            <Image
-              src={CompanyLogo}
-              alt="Uma mão segurando várias crianças"
-              width={200}
-              height={80}
-            />
+            <div>
+              <Image
+                src={CompanyLogo}
+                alt="Uma mão segurando várias crianças"
+                width={200}
+                height={80}
+              />
+            </div>
           </Link>
         </div>
         <ul className={styles['item-list']}>

@@ -4,6 +4,7 @@ import classnames from 'classnames'
 import styles from './styles.module.scss'
 
 type InputCustomProps = {
+  id: string
   label: string
   hiddenLabel?: boolean
   className?: string
@@ -15,12 +16,21 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & InputCustomProps
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    { label, hiddenLabel = false, error, className, suffix, ...restInputProps },
+    {
+      id,
+      label,
+      hiddenLabel = false,
+      error,
+      className,
+      suffix,
+      ...restInputProps
+    },
     ref,
   ) => {
     return (
       <div className={classnames(styles['input-container'], className)}>
         <label
+          htmlFor={id}
           className={classnames(styles['input-label'], {
             [styles['hidden-label']]: hiddenLabel,
             [styles['label-error']]: Boolean(error),
@@ -33,7 +43,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             [styles['wrapper-error']]: Boolean(error),
           })}
         >
-          <input className={styles.input} {...restInputProps} ref={ref} />
+          <input
+            id={id}
+            className={styles.input}
+            {...restInputProps}
+            ref={ref}
+          />
           {suffix}
         </div>
         {Boolean(error) && (

@@ -1,0 +1,46 @@
+@import '@styles/index.module.scss';
+
+.news-card-container {
+  width: 30rem;
+  height: 100%;
+  position: relative;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  @include box-shadow;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    background-color: $color-gray-100;
+  }
+
+  .news-image {
+    object-fit: cover;
+  }
+
+  .news-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    row-gap: 0.8rem;
+    padding: 0.8rem 1.6rem;
+
+    .news-card-title {
+      @include heading-sm;
+      flex: 1;
+    }
+
+    .news-card-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.6rem;
+    }
+  }
+
+  .news-card-link {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+  }
+}

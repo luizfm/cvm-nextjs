@@ -15,7 +15,7 @@ export default function HeroSection() {
       <div className={styles['carousel-wrapper']}>
         <div className={styles['image-shadow']}>
           <h1 className={styles['hero-title']}>
-            Rumo aos <span className={styles['title-bold']}>50</span> anos!
+            RUMO AOS <span className={styles['title-bold']}>50</span> ANOS
           </h1>
         </div>
         <PhotoCarousel photos={HERO_IMAGES} />

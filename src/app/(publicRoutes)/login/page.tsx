@@ -43,6 +43,7 @@ export default function Login() {
     <div className={styles['login-page']}>
       <form onSubmit={onSubmit} className={styles['form-wrapper']}>
         <Input
+          id="email-input"
           type="email"
           placeholder="meu_email@gmail.com"
           label="Email"
@@ -52,6 +53,7 @@ export default function Login() {
           error={errors.email?.message}
         />
         <Input
+          id="password-input"
           type={showPassword ? 'text' : 'password'}
           placeholder="*******"
           label="Senha"
@@ -68,7 +70,12 @@ export default function Login() {
           })}
           error={errors.password?.message}
         />
-        <Button variant="secondary" type="submit" disabled={isLoading}>
+        <Button
+          variant="secondary"
+          type="submit"
+          disabled={isLoading}
+          loading={isLoading}
+        >
           Acessar
         </Button>
       </form>

@@ -1,21 +1,16 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import Header from '@/components/backoffice/header'
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const currentPath = usePathname()
-
-  console.log(currentPath)
-
   return (
     <>
-      <header>teste header</header>
+      <Header />
       <main>{children}</main>
-      <footer>teste footer</footer>
     </>
   )
 }

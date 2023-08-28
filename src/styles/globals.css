@@ -8,13 +8,15 @@ html {
   font-size: 10px;
 }
 
-body {
+body, button {
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   line-height: 1.5;
-  font-family: 'Inter', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   letter-spacing: 0.5px;
+  color: rgb(39 39 39);
+  text-decoration: none;
   /* background-color: rgb(249 249 249); */
   -webkit-font-smoothing: antialiased;
 }
@@ -32,4 +34,8 @@ li {
 a {
   all: unset;
   cursor: pointer;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03rem;
 }

@@ -14,8 +14,6 @@ export default function RootLayout({
 }) {
   const currentPath = usePathname()
 
-  console.log(currentPath)
-
   return (
     <>
       <Header />

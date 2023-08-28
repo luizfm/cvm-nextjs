@@ -1,0 +1,21 @@
+@import '@styles/index.module.scss';
+
+.news-details-page-container {
+  margin-top: 8.7rem;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 8rem 0;
+
+  .news-body {
+    width: 100%;
+    @include max-width;
+  }
+
+  ol {
+    li {
+      list-style: decimal;
+      margin-left: 2rem;
+    }
+  }
+}

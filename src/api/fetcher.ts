@@ -1,8 +1,15 @@
 import axios from 'axios'
 
-console.log(process.env.NEXT_PUBLIC_API_URL, 'env')
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
+  withCredentials: true,
 })
+
+api.interceptors.response.use(
+  (value) => value,
+  (error) => {
+    return Promise.reject(error)
+  },
+)
 
 export default api

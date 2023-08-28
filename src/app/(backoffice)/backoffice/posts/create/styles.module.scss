@@ -1,0 +1,20 @@
+@import '@styles/index.module.scss';
+
+.create-post-page-container {
+  @include max-width;
+
+  .page-title {
+    margin-top: 4rem;
+  }
+
+  .form-wrapper {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+
+    .submit-button {
+      align-self: flex-end;
+    }
+  }
+}

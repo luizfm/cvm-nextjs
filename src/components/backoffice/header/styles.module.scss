@@ -1,0 +1,21 @@
+@import '@styles/index.module.scss';
+
+.header-container {
+  height: 9rem;
+  width: 100%;
+  @include box-shadow; 
+
+  .header-content-wrapper {
+    @include max-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .buttons-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 1.6rem;
+    }
+  }
+}

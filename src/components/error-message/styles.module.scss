@@ -1,0 +1,9 @@
+@import '@styles/index.module.scss';
+
+.error-message-container {
+  @include body-sm;
+  
+  .error-label {
+    color: $variant-error;
+  }
+}

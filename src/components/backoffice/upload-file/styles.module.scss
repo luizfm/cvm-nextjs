@@ -1,0 +1,43 @@
+@import '@styles/index.module.scss';
+
+.upload-file-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  justify-content: center;
+  align-items: flex-start;
+  
+  .upload-file-input {
+    @include visually-hidden;
+  }
+
+  .image-wrapper {
+    position: relative;
+
+    .post-image {
+      object-fit: cover;
+      border-radius: 0.8rem;
+    }
+
+    .remove-image-button {
+      position: absolute;
+      top: 0.2rem;
+      right: 0.2rem;
+      z-index: 1;
+      height: 3.2rem;
+      width: 3.2rem;
+      padding: 0.4rem;
+      @include box-shadow;
+    }
+  }
+
+  .error-message, .error-label {
+    @include body-sm;
+    color: $variant-error;
+  }
+
+  .error-button {
+    color: $variant-error;
+    border: 0.1rem solid $variant-error;
+  }
+}

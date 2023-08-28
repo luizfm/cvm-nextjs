@@ -3,11 +3,13 @@
 import { PHOTO_LIST } from '@/mocks'
 import styles from './index.module.scss'
 import NewsCard from './news-card'
+import useGetPosts from '@/hooks/useGetPosts'
+import newsMapper from '@/utils/news-mapper'
 
 const NEWS_CARD_LIST = [
   {
     id: '1',
-    className: styles['card-one'],
+    className: styles['card-1'],
     author: 'CVM',
     coverImage: PHOTO_LIST[0],
     date: '2021-08-01',
@@ -16,7 +18,7 @@ const NEWS_CARD_LIST = [
   },
   {
     id: '2',
-    className: styles['card-two'],
+    className: styles['card-2'],
     author: 'CVM',
     coverImage: PHOTO_LIST[0],
     date: '2021-08-01',
@@ -25,7 +27,7 @@ const NEWS_CARD_LIST = [
   },
   {
     id: '3',
-    className: styles['card-three'],
+    className: styles['card-3'],
     author: 'CVM',
     coverImage: PHOTO_LIST[0],
     date: '2021-08-01',
@@ -34,7 +36,7 @@ const NEWS_CARD_LIST = [
   },
   {
     id: '4',
-    className: styles['card-four'],
+    className: styles['card-4'],
     author: 'CVM',
     coverImage: PHOTO_LIST[0],
     date: '2021-08-01',
@@ -43,7 +45,7 @@ const NEWS_CARD_LIST = [
   },
   {
     id: '5',
-    className: styles['card-five'],
+    className: styles['card-5'],
     author: 'CVM',
     coverImage: PHOTO_LIST[0],
     date: '2021-08-01',
@@ -53,16 +55,20 @@ const NEWS_CARD_LIST = [
 ]
 
 export function NewsSection() {
+  const { data, isLoading } = useGetPosts({})
+
+  const formattedNews = newsMapper(data?.posts)
+
   return (
     <section className={styles['news-section-container']}>
       <h2 className={styles['news-section-title']}>Notícias</h2>
 
       <div className={styles['news-grid-tile']}>
-        {NEWS_CARD_LIST.map(
+        {formattedNews.map(
           ({ id, className, author, coverImage, date, title, href }) => (
             <NewsCard
               key={id}
-              className={className}
+              className={styles[className]}
               author={author}
               date={date}
               title={title}

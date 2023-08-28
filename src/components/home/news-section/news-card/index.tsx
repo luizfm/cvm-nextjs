@@ -11,7 +11,7 @@ type NewsCardProps = {
   title: string
   author: string
   date: string
-  coverImage: StaticImageData
+  coverImage: string | StaticImageData
 }
 
 export function NewsCard({
@@ -34,6 +34,7 @@ export function NewsCard({
         src={coverImage}
         alt=""
         fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         quality={100}
         className={styles.photo}
       />
@@ -44,7 +45,7 @@ export function NewsCard({
           <time dateTime={dateText}>{dateText}</time>
         </div>
       </div>
-      <Link href={href} className={styles['news-card-link']} />
+      <Link href={href} className={styles['news-card-link']} prefetch={false} />
     </article>
   )
 }
