@@ -19,7 +19,7 @@ export default function AboutUs() {
           title={option.title}
           variant={option.variant}
           description={option.description}
-          animationUrl={option.animationUrl}
+          imageUrl={option.imageUrl}
           icon={<></>}
           {...(index !== 0 ? { hasBeforeLine: true } : {})}
           {...(index !== TIMELINE_OPTIONS.length - 1

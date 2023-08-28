@@ -3,7 +3,7 @@
 import classnames from 'classnames'
 
 import styles from './styles.module.scss'
-import LottiesAnimation from '@/components/lotties-animation'
+import Image, { StaticImageData } from 'next/image'
 
 export enum TimelineVariant {
   LEFT = 'left',
@@ -16,7 +16,7 @@ type TimelineCardProps = {
   description: string
   variant?: TimelineVariant
   className?: string
-  animationUrl: string
+  imageUrl: string | StaticImageData
   hasBeforeLine?: boolean
   hasAfterLine?: boolean
 }
@@ -26,7 +26,7 @@ function TimelineCard({
   icon,
   title,
   variant = TimelineVariant.RIGHT,
-  animationUrl,
+  imageUrl,
   hasBeforeLine,
   hasAfterLine,
   className,
@@ -51,7 +51,13 @@ function TimelineCard({
       >
         <div className={styles['icon-wrapper']}>{icon}</div>
       </div>
-      <LottiesAnimation src={animationUrl} />
+      <Image
+        src={imageUrl}
+        alt=""
+        height={300}
+        width={300}
+        className={styles['timeline-image']}
+      />
     </div>
   )
 }

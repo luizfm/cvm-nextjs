@@ -36,6 +36,7 @@ export default function Backoffice() {
 
       <form onSubmit={onSubmit} className={styles['form-wrapper']}>
         <Input
+          id="search-input"
           type="text"
           label="Search for a post"
           hiddenLabel

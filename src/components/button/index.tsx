@@ -2,7 +2,6 @@ import classnames from 'classnames'
 import React, { ButtonHTMLAttributes } from 'react'
 
 import styles from './styles.module.scss'
-import { SpinnerGap } from '@phosphor-icons/react'
 import Link from 'next/link'
 import Spinner from '../spinner'
 

@@ -1,3 +1,7 @@
+import FoundationImage from '@/assets/images/about-us/foundation.jpeg'
+import FoundaresImage from '@/assets/images/about-us/foundares.png'
+import RetreatImage from '@/assets/images/about-us/retreat.jpeg'
+
 enum TimelineVariant {
   LEFT = 'left',
   RIGHT = 'right',
@@ -6,25 +10,27 @@ enum TimelineVariant {
 export const TIMELINE_OPTIONS = [
   {
     id: '1',
-    title: 'Novembro 1978',
+    title: 'CVM',
     description:
-      'É fundada a CVM para ajudar crianças, adolescentes e adultos abandonados em com risco social',
+      'A CVM – Vinde a Mim as Criancinhas tem desde o início da sua história os princípios de amor, fé e solidariedade.',
     variant: TimelineVariant.RIGHT,
-    animationUrl: 'https://assets4.lottiefiles.com/packages/lf20_jkaln4af.json',
+    imageUrl: FoundationImage,
   },
   {
     id: '2',
-    title: 'Julho 1980',
-    description: 'Dona Geny falece',
+    title: '1976',
+    description:
+      'Por dois anos as fundadoras Geny Júlia Feijó e Jandira Jovita da Rosa permaneceram em vigília de oração, buscando respostas através da fé sobre de que forma poderiam auxiliar a sociedade',
     variant: TimelineVariant.LEFT,
-    animationUrl: 'https://assets3.lottiefiles.com/packages/lf20_gzg000ro.json',
+    imageUrl: FoundaresImage,
   },
   {
     id: '3',
-    title: 'Junho 1985',
-    description: 'Dona Jandira também falece',
+    title: '1978',
+    description:
+      'Foi após um retiro em uma comunidade repleta de crianças que Dona Jandira e Dona Geny se viram diante da sua missão: criar um lugar onde crianças, jovens e adolescentes em risco social pudessem se sentir respeitados, protegidos e amados.',
     variant: TimelineVariant.RIGHT,
-    animationUrl: 'https://assets4.lottiefiles.com/packages/lf20_xw4blqai.json',
+    imageUrl: RetreatImage,
   },
   {
     id: '4',
@@ -32,8 +38,7 @@ export const TIMELINE_OPTIONS = [
     description:
       'A instituição funda o Lar Jandira Jovita da Rosa, para atender crianças de 0 a 18 anos.',
     variant: TimelineVariant.LEFT,
-    animationUrl:
-      'https://assets6.lottiefiles.com/packages/lf20_TwuPFLN49O.json',
+    imageUrl: '',
   },
   {
     id: '5',
@@ -41,15 +46,14 @@ export const TIMELINE_OPTIONS = [
     description:
       'É aberta a Comunidade Terapêutica Dona Geny Julia Feijó que atende crianças e adolescentes.',
     variant: TimelineVariant.RIGHT,
-    animationUrl: 'https://assets2.lottiefiles.com/packages/lf20_h55dw0gs.json',
+    imageUrl: '',
   },
   {
     id: '6',
     title: '2007',
     description: 'A Comunidade Terapêutica passa a atender adultos também.',
     variant: TimelineVariant.LEFT,
-    animationUrl:
-      'https://assets2.lottiefiles.com/private_files/lf30_4FGi6N.json',
+    imageUrl: '',
   },
   {
     id: '7',
@@ -57,7 +61,6 @@ export const TIMELINE_OPTIONS = [
     description:
       'Continuamos firmes e fortes nas realizações dos nossos objetivos e ações sociais, rumo aos 50 anos.',
     variant: TimelineVariant.RIGHT,
-    animationUrl:
-      'https://assets8.lottiefiles.com/private_files/lf30_G9r0Hr.json',
+    imageUrl: '',
   },
 ]
