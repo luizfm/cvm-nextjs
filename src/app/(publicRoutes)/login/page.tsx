@@ -9,6 +9,8 @@ import styles from './styles.module.scss'
 import { useCallback, useState } from 'react'
 import { Eye, EyeClosed } from '@phosphor-icons/react'
 import useLogin from '@/hooks/useLogin'
+import useGetUser from '@/hooks/useGetUser'
+import { redirect } from 'next/navigation'
 
 type FormDefaultValues = {
   email: string
@@ -18,6 +20,7 @@ type FormDefaultValues = {
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false)
   const { mutate, isLoading } = useLogin()
+  const { userId } = useGetUser()
 
   const onShowPasswordClick = useCallback(() => {
     setShowPassword((prevValue) => !prevValue)
@@ -38,6 +41,10 @@ export default function Login() {
     const { email, password } = formData
     mutate({ email, password })
   })
+
+  if (userId) {
+    redirect('/backoffice')
+  }
 
   return (
     <div className={styles['login-page']}>

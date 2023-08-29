@@ -1,6 +1,7 @@
 import api from '@/api/fetcher'
 import { useRouter } from 'next/navigation'
 import { useMutation, useQueryClient } from 'react-query'
+import { toast } from 'react-toastify'
 
 type UpdatePostBody = {
   title?: string
@@ -22,6 +23,7 @@ export default function useUpdatePost(id: string) {
   return useMutation(['post'], updatePost, {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts'] })
+      toast.success('Notícia atualizada com sucesso')
       router.push('/backoffice')
     },
   })

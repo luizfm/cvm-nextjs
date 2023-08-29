@@ -1,16 +1,20 @@
+import { AxiosError } from 'axios'
 import { QueryClient } from 'react-query'
+import { toast } from 'react-toastify'
 
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
       onError: (error) => {
-        console.log({ error }, 'queries')
+        const queryError = error as AxiosError<{ error: string }>
+        toast.error(queryError.response?.data.error)
       },
     },
     mutations: {
       onError: (error) => {
-        console.log({ error }, 'mutations')
+        const mutationError = error as AxiosError<{ error: string }>
+        toast.error(mutationError.response?.data.error)
       },
     },
   },

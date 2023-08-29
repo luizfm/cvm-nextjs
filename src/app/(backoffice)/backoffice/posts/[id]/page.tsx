@@ -53,8 +53,6 @@ export default function BackofficePostDetails() {
 
   const disableUpdateButton = isUpdating || Object.keys(errors).length > 0
 
-  console.log({ disableUpdateButton })
-
   useEffect(() => {
     if (data?.post) {
       const {

@@ -45,6 +45,10 @@ export default function Pagination({
     [onPageChange],
   )
 
+  const pageCount = Math.ceil(totalItemsCount / itemsPerPage)
+
+  const formattedPageCount = isNaN(pageCount) ? 0 : pageCount
+
   return (
     <div className={classnames(styles['pagination-wrapper'], className)}>
       <ReactPaginate
@@ -53,7 +57,7 @@ export default function Pagination({
         nextLabel=">"
         previousLabel="<"
         pageRangeDisplayed={rangeDisplay}
-        pageCount={Math.ceil(totalItemsCount / itemsPerPage)}
+        pageCount={formattedPageCount}
         onPageChange={handlePageChange}
         {...PAGINATE_STYLES}
       />

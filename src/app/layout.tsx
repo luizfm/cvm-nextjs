@@ -2,11 +2,15 @@
 
 import { League_Spartan } from 'next/font/google'
 import classnames from 'classnames'
-
 import { QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import '../styles/globals.css'
+import { ToastContainer } from 'react-toastify'
+
 import { queryClient } from '@/store'
+
+import 'react-toastify/dist/ReactToastify.css'
+
+import '../styles/globals.css'
 
 const leagueSpartan = League_Spartan({ subsets: ['latin'], weight: '700' })
 
@@ -21,6 +25,7 @@ export default function RootLayout({
         <QueryClientProvider client={queryClient}>
           {children}
           <ReactQueryDevtools />
+          <ToastContainer />
         </QueryClientProvider>
       </body>
     </html>

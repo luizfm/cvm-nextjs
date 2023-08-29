@@ -1,24 +1,21 @@
-'use client'
+import { headers } from 'next/headers'
 
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 
 import styles from './styles.module.scss'
 
-import { usePathname } from 'next/navigation'
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const currentPath = usePathname()
-
+  const currentPath = headers().get('referer') || ''
   return (
     <>
       <Header />
       <main className={styles['main-content']}>{children}</main>
-      {currentPath !== '/login' && <Footer />}
+      {!currentPath.includes('/login') && <Footer />}
     </>
   )
 }

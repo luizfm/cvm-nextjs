@@ -5,10 +5,8 @@ export default function newsMapper(posts?: UseGetPostsReturnData[]) {
     return []
   }
 
-  console.log({ posts })
-
   // TODO: Remove slice after pagination applied
-  return posts.slice(0, 5).map((post, index) => ({
+  return posts.map((post, index) => ({
     id: post.id,
     className: `card-${index + 1}`,
     author: post.user.name,

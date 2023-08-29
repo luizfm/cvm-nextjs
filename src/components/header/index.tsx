@@ -46,6 +46,7 @@ function Header() {
                 alt="Uma mão segurando várias crianças"
                 width={200}
                 height={80}
+                priority
               />
             </div>
           </Link>
