@@ -38,6 +38,17 @@
     }
   }
 
+  .delete-button {
+    position: absolute;
+    z-index: 2;
+    top: 0.8rem;
+    right: 0.8rem;
+    @include box-shadow;
+    padding: 0.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
   .news-card-link {
     z-index: 1;
     position: absolute;

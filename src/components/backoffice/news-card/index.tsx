@@ -2,6 +2,10 @@ import Image, { StaticImageData } from 'next/image'
 
 import styles from './styles.module.scss'
 import Link from 'next/link'
+import Button from '@/components/button'
+import { X } from '@phosphor-icons/react'
+import { useCallback } from 'react'
+import useUpdatePost from '@/hooks/useUpdatePost'
 
 type NewsCardProps = {
   id: string
@@ -18,6 +22,14 @@ export default function NewsCard({
   author,
   createdAt,
 }: NewsCardProps) {
+  const { mutate } = useUpdatePost(id)
+
+  const onDeleteClick = useCallback(() => {
+    mutate({
+      disabled: true,
+    })
+  }, [mutate])
+
   return (
     <article className={styles['news-card-container']}>
       <Image
@@ -35,6 +47,13 @@ export default function NewsCard({
           <time dateTime={createdAt}>{createdAt}</time>
         </div>
       </div>
+      <Button
+        className={styles['delete-button']}
+        variant="tertiary"
+        onClick={onDeleteClick}
+      >
+        <X />
+      </Button>
       <Link
         href={`/backoffice/posts/${id}`}
         className={styles['news-card-link']}

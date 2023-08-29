@@ -36,3 +36,12 @@
   }
 }
 
+.tertiary {
+  background-color: $color-secondary-700;
+  color: $white;
+
+  &:hover {
+    background-color: $color-secondary-600;
+  }
+}
+

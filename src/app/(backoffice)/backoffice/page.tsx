@@ -7,9 +7,17 @@ import styles from './styles.module.scss'
 import { useForm } from 'react-hook-form'
 import Button from '@/components/button'
 import NewsCard from '@/components/backoffice/news-card'
-import useGetPosts from '@/hooks/useGetPosts'
-import { useState } from 'react'
+import useGetPosts, { UseGetPostsReturnData } from '@/hooks/useGetPosts'
+import { useCallback, useState } from 'react'
 import { formatToLocaleString } from '@/utils'
+import Pagination from '@/components/pagination'
+import Spinner from '@/components/spinner'
+
+const INITIAL_PAGE_AT_ARRAY_INDEX = 0
+
+type PageProps = {
+  selected: number
+}
 
 type FormDataDefaultValues = {
   search: string
@@ -17,8 +25,15 @@ type FormDataDefaultValues = {
 
 export default function Backoffice() {
   const [search, setSearch] = useState('')
-  const { data } = useGetPosts({ search })
-  const { register, handleSubmit } = useForm<FormDataDefaultValues>({
+  const [currentPage, setCurrentPage] = useState(INITIAL_PAGE_AT_ARRAY_INDEX)
+  const { data, fetchNextPage, isLoading, isFetchingNextPage } = useGetPosts({
+    search,
+  })
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<FormDataDefaultValues>({
     defaultValues: {
       search: '',
     },
@@ -26,7 +41,34 @@ export default function Backoffice() {
 
   const onSubmit = handleSubmit((formData) => {
     setSearch(formData.search)
+    setCurrentPage(INITIAL_PAGE_AT_ARRAY_INDEX)
   })
+
+  const onFetchNextPage = useCallback(() => {
+    if (data?.pages[currentPage].nextPage && !data?.pages[currentPage + 1]) {
+      fetchNextPage({
+        pageParam: currentPage + 2,
+      })
+    }
+    setCurrentPage((prevValue) => prevValue + 1)
+  }, [fetchNextPage, data, currentPage])
+
+  const onPageChange = useCallback(
+    ({ selected }: PageProps) => {
+      if (currentPage < selected) {
+        onFetchNextPage()
+        return
+      }
+
+      setCurrentPage((prevValue) => prevValue - 1)
+    },
+    [currentPage, onFetchNextPage],
+  )
+
+  const totalItemsCount = data?.pages[currentPage]?.totalPosts ?? 0
+  const isFetchingOrLoading = isLoading || isFetchingNextPage
+
+  console.log(isFetchingOrLoading, data, currentPage, isSubmitting)
 
   return (
     <section className={styles['backoffice-page-container']}>
@@ -50,22 +92,33 @@ export default function Backoffice() {
         />
       </form>
 
-      <ul className={styles['news-card-list']}>
-        {data?.posts.map((news) => (
-          <li key={news.id}>
-            <NewsCard
-              id={news.id}
-              title={news.title}
-              author={news.user.name}
-              createdAt={formatToLocaleString({
-                date: new Date(news.created_at),
-                locale: 'pt-BR',
-              })}
-              imageUrl={news.post_image}
-            />
-          </li>
-        ))}
-      </ul>
+      {isFetchingOrLoading && <Spinner />}
+      {!isFetchingOrLoading && (
+        <ul className={styles['news-card-list']}>
+          {data?.pages[currentPage]?.posts.map(
+            (news: UseGetPostsReturnData) => (
+              <li key={news.id}>
+                <NewsCard
+                  id={news.id}
+                  title={news.title}
+                  author={news.user.name}
+                  createdAt={formatToLocaleString({
+                    date: new Date(news.created_at),
+                    locale: 'pt-BR',
+                  })}
+                  imageUrl={news.post_image}
+                />
+              </li>
+            ),
+          )}
+        </ul>
+      )}
+      {!isSubmitting && (
+        <Pagination
+          totalItemsCount={totalItemsCount}
+          onPageChange={onPageChange}
+        />
+      )}
     </section>
   )
 }

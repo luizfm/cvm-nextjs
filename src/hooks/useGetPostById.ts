@@ -14,6 +14,9 @@ type GetPostByIdReturnType = {
     created_at: string
     user: UserType
   }
+  totalPosts: number
+  currentPage: number
+  nextPage: number | null
 }
 
 export default function useGetPostById(id: string) {
@@ -22,7 +25,7 @@ export default function useGetPostById(id: string) {
     return result.data
   }
 
-  return useQuery<GetPostByIdReturnType>(['post', id], getPostById, {
+  return useQuery<GetPostByIdReturnType>(['posts', id], getPostById, {
     enabled: !!id,
   })
 }

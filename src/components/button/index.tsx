@@ -7,7 +7,7 @@ import Spinner from '../spinner'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'tertiary'
   type?: 'button' | 'submit'
   loading?: boolean
   disabled?: boolean

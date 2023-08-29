@@ -3,10 +3,11 @@ import { useRouter } from 'next/navigation'
 import { useMutation, useQueryClient } from 'react-query'
 
 type UpdatePostBody = {
-  title: string
-  body: string
-  post_image: string
-  user_id: string
+  title?: string
+  body?: string
+  post_image?: string
+  user_id?: string
+  disabled?: boolean
 }
 
 export default function useUpdatePost(id: string) {
@@ -20,7 +21,7 @@ export default function useUpdatePost(id: string) {
 
   return useMutation(['post'], updatePost, {
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['post', id] })
+      queryClient.invalidateQueries({ queryKey: ['posts'] })
       router.push('/backoffice')
     },
   })
