@@ -9,6 +9,10 @@
   row-gap: 3.2rem;
   height: 100vh;
 
+  .spinner-wrapper {
+    @include spinner-wrapper;
+  }
+
   .news-section-title {
     @include heading-md-bold;
   }

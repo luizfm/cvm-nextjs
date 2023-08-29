@@ -1,28 +1,61 @@
 import ReactPaginate from 'react-paginate'
+import classnames from 'classnames'
+import { useCallback } from 'react'
 
 import styles from './styles.module.scss'
 
+const PAGINATE_STYLES = {
+  previousClassName: styles.previous,
+  previousLinkClassName: styles['previous-link'],
+  nextClassName: styles.next,
+  nextLinkClassName: styles['next-link'],
+  activeClassName: styles.active,
+  pageClassName: styles.page,
+  pageLinkClassName: styles['page-link'],
+  disabledClassName: styles.disabled,
+}
+
+type PageProps = {
+  selected: number
+}
+
+export type PagechangeProps = {
+  pageNumber: number
+}
+
 type PaginationProps = {
   totalItemsCount: number
-  onPageChange: (selectedItem: { selected: number }) => void
+  itemsPerPage: number
+  onPageChange: (pageNumber: number) => void
   rangeDisplay?: number
+  className?: string
 }
 
 export default function Pagination({
   totalItemsCount,
+  itemsPerPage,
   onPageChange,
-  rangeDisplay = 10,
+  rangeDisplay = 5,
+  className,
 }: PaginationProps) {
+  const handlePageChange = useCallback(
+    ({ selected }: PageProps) => {
+      onPageChange(selected + 1)
+    },
+    [onPageChange],
+  )
+
   return (
-    <div className={styles['pagination-wrapper']}>
+    <div className={classnames(styles['pagination-wrapper'], className)}>
       <ReactPaginate
         className={styles['pagination-container']}
         breakLabel="..."
         nextLabel=">"
         previousLabel="<"
         pageRangeDisplayed={rangeDisplay}
-        pageCount={totalItemsCount / rangeDisplay}
-        onPageChange={onPageChange}
+        pageCount={Math.ceil(totalItemsCount / itemsPerPage)}
+        onPageChange={handlePageChange}
+        {...PAGINATE_STYLES}
       />
     </div>
   )

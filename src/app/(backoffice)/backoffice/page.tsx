@@ -13,21 +13,16 @@ import { formatToLocaleString } from '@/utils'
 import Pagination from '@/components/pagination'
 import Spinner from '@/components/spinner'
 
-const INITIAL_PAGE_AT_ARRAY_INDEX = 0
-
-type PageProps = {
-  selected: number
-}
-
 type FormDataDefaultValues = {
   search: string
 }
 
 export default function Backoffice() {
+  const [page, setPage] = useState(1)
   const [search, setSearch] = useState('')
-  const [currentPage, setCurrentPage] = useState(INITIAL_PAGE_AT_ARRAY_INDEX)
-  const { data, fetchNextPage, isLoading, isFetchingNextPage } = useGetPosts({
+  const { data, isLoading } = useGetPosts({
     search,
+    page,
   })
   const {
     register,
@@ -41,34 +36,15 @@ export default function Backoffice() {
 
   const onSubmit = handleSubmit((formData) => {
     setSearch(formData.search)
-    setCurrentPage(INITIAL_PAGE_AT_ARRAY_INDEX)
+    setPage(1)
   })
 
-  const onFetchNextPage = useCallback(() => {
-    if (data?.pages[currentPage].nextPage && !data?.pages[currentPage + 1]) {
-      fetchNextPage({
-        pageParam: currentPage + 2,
-      })
-    }
-    setCurrentPage((prevValue) => prevValue + 1)
-  }, [fetchNextPage, data, currentPage])
+  const onPageChange = useCallback((pageNumber: number) => {
+    setPage(pageNumber)
+  }, [])
 
-  const onPageChange = useCallback(
-    ({ selected }: PageProps) => {
-      if (currentPage < selected) {
-        onFetchNextPage()
-        return
-      }
-
-      setCurrentPage((prevValue) => prevValue - 1)
-    },
-    [currentPage, onFetchNextPage],
-  )
-
-  const totalItemsCount = data?.pages[currentPage]?.totalPosts ?? 0
-  const isFetchingOrLoading = isLoading || isFetchingNextPage
-
-  console.log(isFetchingOrLoading, data, currentPage, isSubmitting)
+  const totalItemsCount = data?.totalPosts
+  const isFetchingOrLoading = isLoading
 
   return (
     <section className={styles['backoffice-page-container']}>
@@ -92,31 +68,31 @@ export default function Backoffice() {
         />
       </form>
 
-      {isFetchingOrLoading && <Spinner />}
+      {isFetchingOrLoading && <Spinner className={styles['spinner-wrapper']} />}
       {!isFetchingOrLoading && (
         <ul className={styles['news-card-list']}>
-          {data?.pages[currentPage]?.posts.map(
-            (news: UseGetPostsReturnData) => (
-              <li key={news.id}>
-                <NewsCard
-                  id={news.id}
-                  title={news.title}
-                  author={news.user.name}
-                  createdAt={formatToLocaleString({
-                    date: new Date(news.created_at),
-                    locale: 'pt-BR',
-                  })}
-                  imageUrl={news.post_image}
-                />
-              </li>
-            ),
-          )}
+          {data?.posts.map((news: UseGetPostsReturnData) => (
+            <li key={news.id}>
+              <NewsCard
+                id={news.id}
+                title={news.title}
+                author={news.user.name}
+                createdAt={formatToLocaleString({
+                  date: new Date(news.created_at),
+                  locale: 'pt-BR',
+                })}
+                imageUrl={news.post_image}
+              />
+            </li>
+          ))}
         </ul>
       )}
       {!isSubmitting && (
         <Pagination
           totalItemsCount={totalItemsCount}
+          itemsPerPage={10}
           onPageChange={onPageChange}
+          className={styles.pagination}
         />
       )}
     </section>

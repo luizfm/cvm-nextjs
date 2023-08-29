@@ -1,6 +1,6 @@
 import api from '@/api/fetcher'
 import { StaticImageData } from 'next/image'
-import { useInfiniteQuery } from 'react-query'
+import { useQuery } from 'react-query'
 
 type UserType = {
   name: string
@@ -14,27 +14,33 @@ export type UseGetPostsReturnData = {
   created_at: string
 }
 
-export type UseGetPostsReturnType = {
-  posts: UseGetPostsReturnData[]
-}
-
 type QueryKeyType = {
   page?: number
+  pageSize?: number
   search: string
 }
 
-export default function useGetPosts({ search, page = 1 }: QueryKeyType) {
+export default function useGetPosts({
+  search,
+  page = 1,
+  pageSize = 10,
+}: QueryKeyType) {
   const getPosts = async (page: number, search: string) => {
     const urlSearchParams = new URLSearchParams({
       search,
       page: `${page}`,
+      pageSize: `${pageSize}`,
     }).toString()
 
     const result = await api.get(`/posts?${urlSearchParams}`)
     return result.data
   }
 
-  return useInfiniteQuery(['posts', { search, page }], ({ pageParam = 1 }) =>
-    getPosts(pageParam, search),
+  return useQuery(
+    ['posts', { search, page, pageSize }],
+    () => getPosts(page, search),
+    {
+      keepPreviousData: true,
+    },
   )
 }

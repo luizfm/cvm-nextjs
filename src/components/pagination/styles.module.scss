@@ -1,8 +1,49 @@
+@import '@styles/index.module.scss';
+
 .pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   .pagination-container {
     display: flex;
     column-gap: 0.8rem;
     
+  }
+
+  .page, .previous, .next {
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 99999px;
+    background-color: $color-gray-100;
+    position: relative;
+    @include box-shadow;
+
+    &:not(.active, .disabled):hover {
+      background-color: $color-gray-200;
+    }
+
+    .page-link, .previous-link, .next-link {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+  .previous, .next {
+    &.disabled {
+      color: $color-gray-300;
+
+      .previous-link, .next-link {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .active {
+    background-color: $color-primary-500;
   }
 }

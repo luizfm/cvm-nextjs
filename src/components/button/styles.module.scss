@@ -11,7 +11,7 @@
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
 
-  & .disabled {
+  &:disabled {
     cursor: not-allowed;
     filter: grayscale(100%);
   }
@@ -22,7 +22,7 @@
 .primary {
   background-color: $color-gray-50;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: $color-gray-200;
   }
 }
@@ -31,7 +31,7 @@
   background-color: $color-primary-700;
   color: $white;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: $color-primary-600;
   }
 }
@@ -40,7 +40,7 @@
   background-color: $color-secondary-700;
   color: $white;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: $color-secondary-600;
   }
 }

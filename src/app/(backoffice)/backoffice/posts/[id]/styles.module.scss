@@ -7,6 +7,10 @@
     margin-top: 4rem;
   }
 
+  .spinner-wrapper {
+    @include spinner-wrapper;
+  }
+
   .form-wrapper {
     padding: 4rem 0;
     display: flex;

@@ -2,7 +2,7 @@
 
 .c-spinner {
   border: 1.6rem solid #f3f3f3; /* Light grey */
-  border-top: 1.6rem solid $color-gray-100;
+  border-top: 1.6rem solid $color-primary-300;
   border-radius: 50%;
   width: 12rem;
   height: 12rem;
@@ -12,7 +12,7 @@
     height: 1.8rem;
     width: 1.8rem;
     border: 0.4rem solid #f3f3f3; /* Light grey */
-    border-top: 0.4rem solid $color-gray-100;
+    border-top: 0.4rem solid $color-primary-300;
   }
 }
 

@@ -1,5 +1,12 @@
 import Button from '@/components/button'
-import { ChangeEvent, forwardRef, useCallback, useRef, useState } from 'react'
+import {
+  ChangeEvent,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { mergeRefs } from 'react-merge-refs'
 import classnames from 'classnames'
 
@@ -12,13 +19,15 @@ type UploadFileProps = {
   className?: string
   onChange: (value?: string) => void
   error?: string
+  defaultPicture?: string
 }
 
 const UploadFile = forwardRef<HTMLInputElement, UploadFileProps>(
-  ({ label, className, onChange, error }, ref) => {
+  ({ label, className, onChange, error, defaultPicture }, ref) => {
     const [uploadedFile, setUploadedFile] = useState<string | undefined>(
-      undefined,
+      defaultPicture,
     )
+
     const inputRef = useRef<HTMLInputElement | null>(null)
 
     const onUploadButtonClick = useCallback(() => {
@@ -46,6 +55,10 @@ const UploadFile = forwardRef<HTMLInputElement, UploadFileProps>(
       setUploadedFile(undefined)
       onChange(undefined)
     }, [onChange])
+
+    useEffect(() => {
+      setUploadedFile(defaultPicture)
+    }, [defaultPicture])
 
     return (
       <div className={classnames(styles['upload-file-container'], className)}>

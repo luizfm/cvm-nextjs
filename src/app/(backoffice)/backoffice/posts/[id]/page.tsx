@@ -51,6 +51,10 @@ export default function BackofficePostDetails() {
     })
   })
 
+  const disableUpdateButton = isUpdating || Object.keys(errors).length > 0
+
+  console.log({ disableUpdateButton })
+
   useEffect(() => {
     if (data?.post) {
       const {
@@ -67,7 +71,7 @@ export default function BackofficePostDetails() {
   return (
     <section className={styles['update-post-page-container']}>
       <h1 className={styles['page-title']}>Criar nova notícia</h1>
-      {isLoading && <Spinner />}
+      {isLoading && <Spinner className={styles['spinner-wrapper']} />}
       {!isLoading && (
         <form className={styles['form-wrapper']} onSubmit={onSubmit}>
           <Input
@@ -81,11 +85,12 @@ export default function BackofficePostDetails() {
             control={control}
             name="post_image"
             rules={{ required: REQUIRED_FIELD }}
-            render={({ field }) => (
+            render={({ field, formState }) => (
               <UploadFile
                 label="Foto de capa da notícia"
                 onChange={field.onChange}
                 error={errors.post_image?.message}
+                defaultPicture={formState.defaultValues?.post_image}
               />
             )}
           />
@@ -107,7 +112,7 @@ export default function BackofficePostDetails() {
           <Button
             type="submit"
             variant="secondary"
-            disabled={isUpdating}
+            disabled={disableUpdateButton}
             loading={isUpdating}
             className={styles['submit-button']}
           >

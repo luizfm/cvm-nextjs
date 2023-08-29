@@ -9,7 +9,6 @@ export default function useGetUser() {
   const queryClient = useQueryClient()
   const userIdFromCookies = getCookie('userId')
   const user = queryClient.getQueryData<UserProps>(['user'])
-  console.log({ userIdFromCookies })
 
   if (userIdFromCookies && !user) {
     queryClient.setQueryData(['user'], { id: userIdFromCookies })

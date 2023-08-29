@@ -9,6 +9,10 @@
   .backoffice-page-title {
     margin-top: 8rem;
   }
+  
+  .spinner-wrapper {
+    @include spinner-wrapper;
+  }
 
   .form-wrapper {
     .search-button {
@@ -22,6 +26,10 @@
     flex-wrap: wrap;
     column-gap: 2.65rem;
     row-gap: 2.4rem;
+    padding-bottom: 4rem;
+  }
+
+  .pagination {
     padding-bottom: 4rem;
   }
 }
