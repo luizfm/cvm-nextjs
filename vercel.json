@@ -3,6 +3,10 @@
     {
       "source": "/api-cvm.luizfm.com/:path*",
       "destination": "http://api-cvm.luizfm.com/:path*"
+    },
+    {
+      "source": "/backoffice/posts/api-cvm.luizfm.com/:path*",
+      "destination": "http://api-cvm.luizfm.com/:path*"
     }
   ]
 }

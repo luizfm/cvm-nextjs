@@ -27,7 +27,11 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api-cvm.luizfm.com/(.*)$',
+        source: '/api-cvm.luizfm.com/:path*',
+        destination: 'http://api-cvm.luizfm.com/$1',
+      },
+      {
+        source: '/backoffice/posts/api-cvm.luizfm.com/:path*',
         destination: 'http://api-cvm.luizfm.com/$1',
       },
     ]
