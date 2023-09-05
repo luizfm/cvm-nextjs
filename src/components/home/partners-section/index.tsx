@@ -1,4 +1,4 @@
-import { PARTNERS } from '@/mocks/partners'
+import { PARTNERS } from '@/constants/partners'
 
 import PartnersCarousel from './partners-carousel'
 

@@ -1,0 +1,26 @@
+
+
+.social-media-container {
+  margin: 2.4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.6rem;
+
+  .social-media-item {
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.8rem;
+    transition: all 0.2s ease-in;
+    display: flex;
+    row-gap: 0.8rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    &:hover {
+      backdrop-filter: blur(10px);
+      background-color: rgba(0,0,0, 0.15);
+    }
+  }
+}

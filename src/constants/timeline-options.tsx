@@ -1,6 +1,10 @@
 import FoundationImage from '@/assets/images/about-us/foundation.jpeg'
 import FoundaresImage from '@/assets/images/about-us/foundares.png'
 import RetreatImage from '@/assets/images/about-us/retreat.jpeg'
+import FirstPlaceImage from '@/assets/images/about-us/first-place.jpeg'
+import NewPlaceImage from '@/assets/images/about-us/new-place.jpeg'
+import TerapeuthicCommunity from '@/assets/images/about-us/terapeuthic-community.jpeg'
+import NewBuildingImage from '@/assets/images/about-us/new-building.jpeg'
 
 enum TimelineVariant {
   LEFT = 'left',
@@ -36,31 +40,32 @@ export const TIMELINE_OPTIONS = [
     id: '4',
     title: '1986',
     description:
-      'A instituição funda o Lar Jandira Jovita da Rosa, para atender crianças de 0 a 18 anos.',
+      'Em 1986 inaugurou o Acolhimento Institucional Dona Jandira Jovita da Rosa, que funcionou durante 29 anos.',
     variant: TimelineVariant.LEFT,
-    imageUrl: '',
+    imageUrl: FirstPlaceImage,
   },
   {
     id: '5',
-    title: '1996',
+    title: '1993',
     description:
-      'É aberta a Comunidade Terapêutica Dona Geny Julia Feijó que atende crianças e adolescentes.',
+      'Depois de 15 anos de muito amor, em 04 de novembro de 1993 aconteceu a solenidade de inauguração do prédio sede com mais de 3.000 M²',
     variant: TimelineVariant.RIGHT,
-    imageUrl: '',
+    imageUrl: NewPlaceImage,
   },
   {
     id: '6',
-    title: '2007',
-    description: 'A Comunidade Terapêutica passa a atender adultos também.',
+    title: '1996',
+    description:
+      'Fundação da comunidade terapêutica dona Geny Júlia Feijó, localizada no município de Biguaçu.',
     variant: TimelineVariant.LEFT,
-    imageUrl: '',
+    imageUrl: TerapeuthicCommunity,
   },
   {
     id: '7',
     title: 'Hoje',
     description:
-      'Continuamos firmes e fortes nas realizações dos nossos objetivos e ações sociais, rumo aos 50 anos.',
+      'Depois de muito tempo de dedicação e atendimentos à população carente de São José, continuamos firmes e fortes nas realizações dos nossos objetivos e ações sociais, rumo aos 50 anos.',
     variant: TimelineVariant.RIGHT,
-    imageUrl: '',
+    imageUrl: NewBuildingImage,
   },
 ]

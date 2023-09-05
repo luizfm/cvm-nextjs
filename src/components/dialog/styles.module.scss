@@ -43,6 +43,8 @@
   .dialog-children {
     border-top: 0.1rem solid $color-gray-100;
     padding-top: 1.6rem;
+    max-height: 60vh;
+    overflow-y: auto;
   }
 
   .dialog-footer {

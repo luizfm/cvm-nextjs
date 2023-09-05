@@ -1,9 +1,9 @@
-import CasasDaAguaLogo from '@/assets/images/casas-da-agua-logo.png'
-import IntelbrasLogo from '@/assets/images/intelbras-logo.png'
-import SestSenatLogo from '@/assets/images/sest-senat-logo.png'
-import HavanLogo from '@/assets/images/havan-logo.png'
-import OrionLogo from '@/assets/images/orion-logo.png'
-import BILogo from '@/assets/images/bi-logo.png'
+import CasasDaAguaLogo from '@/assets/images/supporters/casas-da-agua-logo.png'
+import IntelbrasLogo from '@/assets/images/supporters/intelbras-logo.png'
+import SestSenatLogo from '@/assets/images/supporters/sest-senat-logo.png'
+import HavanLogo from '@/assets/images/supporters/havan-logo.png'
+import OrionLogo from '@/assets/images/supporters/orion-logo.png'
+import BILogo from '@/assets/images/supporters/bi-logo.png'
 
 export const PARTNERS = [
   {

@@ -5,7 +5,16 @@ import Image from 'next/image'
 function CompanyDataImpactSection() {
   return (
     <section className={styles['company-data-impact-section-container']}>
-      <Image src={DataImpactImage} alt="" className={styles.image} />
+      <h2 className={styles['section-title']}>IMPACTO SOCIAL</h2>
+      <div className={styles['image-wrapper']}>
+        <Image
+          src={DataImpactImage}
+          alt=""
+          fill
+          sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 100vw"
+          className={styles.image}
+        />
+      </div>
     </section>
   )
 }

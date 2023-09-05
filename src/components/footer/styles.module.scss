@@ -1,10 +1,23 @@
 @import '@styles/index.module.scss';
 
 .footer-container {
-  padding: 4rem 0;
   width: 100%;
   background-color: $color-primary-600;
   color: $white;
+
+
+  .footer-image-wrapper {
+    position: relative;
+    height: 23rem;
+    
+    @include media(md-viewport, sm-viewport) {
+      height: 15rem;
+    }
+
+    .footer-image {
+      object-fit: cover;
+    }
+  }
 
   .footer-wrapper {
     display: flex;
@@ -12,7 +25,7 @@
     justify-content: center;
     align-items: center;
     row-gap: 3.2rem;
-
+    padding: 4rem 0;
   
     .footer-content {
       display: flex;

@@ -3,10 +3,22 @@
 import styles from './styles.module.scss'
 import Link from 'next/link'
 import { SOCIAL_MEDIA_OPTIONS } from '@/constants/social-media-options'
+import Image from 'next/image'
+import DonationImage from '@/assets/images/footer/donation.png'
 
 function Footer() {
   return (
     <footer className={styles['footer-container']}>
+      <div className={styles['footer-image-wrapper']}>
+        <Image
+          src={DonationImage}
+          alt="Imagem de ajuda"
+          className={styles['footer-image']}
+          fill
+          sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 100vw"
+          quality={100}
+        />
+      </div>
       <div className={styles['footer-wrapper']}>
         <div className={styles['footer-content']}>
           <div className={styles['address-contact-info']}>

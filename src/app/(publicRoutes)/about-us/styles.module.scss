@@ -4,15 +4,36 @@
   padding: 8rem 0;
   margin-top: 8.75rem;
 
+  .page-title {
+    @include visually-hidden;
+  }
+
+  .video-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6.4rem;
+    row-gap: 2.4rem;
+
+    .video-title {
+      @include heading-lg;
+    }
+
+    .institutional-video {
+      border: 0;
+    }
+  }
+
   .page-title-container {
-    @include max-width;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1.6rem 0;
-    border-top: 0.3rem dotted black;
-    border-bottom: 0.3rem dotted black;
+    background-color: $color-brand-alternative-200;
+    border-radius: 0.4rem;
+    margin-bottom: 4rem;
 
 
     .about-us-title {

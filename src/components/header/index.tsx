@@ -8,6 +8,8 @@ import classnames from 'classnames'
 import CompanyLogo from '@/assets/images/logo/cvm-logo-new.png'
 
 import styles from './styles.module.scss'
+import NavigationMenu from '../navigation-menu'
+import Button from '../button'
 
 const MENU_ITEMS = [
   {
@@ -26,9 +28,20 @@ const MENU_ITEMS = [
     label: 'Fotos',
     path: '/photos',
   },
+]
+
+const TRANSPARENCY_ITEMS = [
   {
-    label: 'Login',
-    path: '/login',
+    id: 1,
+    trigger: <Button>Transparência</Button>,
+    component: (
+      <Link
+        target="_blank"
+        href="https://drive.google.com/file/d/1eoMl-AYzPBCPQOUfTjXN3CXy0ugRe_gy/view"
+      >
+        Relatório anual
+      </Link>
+    ),
   },
 ]
 
@@ -62,6 +75,16 @@ function Header() {
               <Link href={item.path}>{item.label}</Link>
             </li>
           ))}
+          <li>
+            <NavigationMenu items={TRANSPARENCY_ITEMS} />
+          </li>
+          <li
+            className={classnames(styles['nav-item'], {
+              [styles.active]: currentPath === '/login',
+            })}
+          >
+            <Link href={'/login'}>Login</Link>
+          </li>
         </ul>
       </nav>
     </header>

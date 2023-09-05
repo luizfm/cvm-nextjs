@@ -8,6 +8,7 @@ import Dialog from '@/components/dialog'
 import { Carousel } from '@/components/carousel'
 
 import styles from './styles.module.scss'
+import JoinUsSection from './join-us'
 
 export default function Help() {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
@@ -34,20 +35,23 @@ export default function Help() {
   } = HELP_ITEMS_DIALOG_MAP[dialogId as HelpOptions]
 
   return (
-    <section className={styles['help-section']}>
-      <h1 className={styles['help-title']}>Escolha a melhor forma de doar</h1>
+    <div>
+      <section className={styles['help-section']}>
+        <h1 className={styles['help-title']}>Escolha a melhor forma de doar</h1>
 
-      <Carousel modules={[Pagination, Autoplay]} items={helpItems} />
+        <Carousel modules={[Pagination, Autoplay]} items={helpItems} />
 
-      {isDialogOpen && (
-        <Dialog
-          title={title}
-          description={description}
-          onOpenChange={onOpenDialog}
-        >
-          {content}
-        </Dialog>
-      )}
-    </section>
+        {isDialogOpen && (
+          <Dialog
+            title={title}
+            description={description}
+            onOpenChange={onOpenDialog}
+          >
+            {content}
+          </Dialog>
+        )}
+      </section>
+      <JoinUsSection />
+    </div>
   )
 }

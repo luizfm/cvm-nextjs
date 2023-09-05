@@ -56,7 +56,7 @@
       }
     }
 
-    .icon-wrapper {
+    .timeline-bullet {
       border-radius: 50%;
       border: 1rem solid $color-primary-400;
       padding: 2.4rem;
@@ -66,6 +66,7 @@
   .timeline-image {
     object-fit: cover;
     margin: 2.4rem 0;
+    border-radius: 0.8rem;
   }
 }
 

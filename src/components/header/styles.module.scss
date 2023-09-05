@@ -50,6 +50,13 @@
           border-bottom-color: $color-gray-500;
         }
       }
+
+      .transparency-button {
+        border: 0;
+        @include body-md;
+        background-color: transparent;
+        border-radius: 0.8rem;
+      }
     }
   }
 }

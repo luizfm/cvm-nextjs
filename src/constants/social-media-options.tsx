@@ -20,11 +20,3 @@ export const SOCIAL_MEDIA_OPTIONS = [
     icon: <Image src={WhatsappImage} alt="" height={32} width={32} />,
   },
 ]
-
-export const WHATSAPP_NUMBER_OPTIONS = [
-  {
-    title: 'CEI',
-    href: 'https://wa.me/5548988442918',
-    icon: <Image src={WhatsappImage} alt="" height={32} width={32} />,
-  },
-]

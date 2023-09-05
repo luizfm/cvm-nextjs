@@ -1,0 +1,17 @@
+.bank-account-details {
+  margin: 2.4rem 0;
+}
+
+.image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 20rem;
+  width: 20rem;
+  margin: 2.4rem auto;
+
+  .image {
+    object-fit: cover;
+  }
+}

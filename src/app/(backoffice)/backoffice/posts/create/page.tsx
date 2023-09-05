@@ -19,7 +19,7 @@ type CratePostFormData = {
 
 export default function CreatePostsPage() {
   const { userId } = useGetUser()
-  const { mutate } = useCreatePost()
+  const { mutate, isLoading } = useCreatePost()
 
   const {
     register,
@@ -82,6 +82,7 @@ export default function CreatePostsPage() {
         />
 
         <Button
+          loading={isLoading}
           type="submit"
           variant="secondary"
           className={styles['submit-button']}

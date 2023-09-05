@@ -2,3 +2,39 @@
   max-width: 128rem;
   margin: 0 auto;
 }
+
+@mixin lg-viewport {
+  @media (min-width: 1024px)  {
+    @content;
+  }
+}
+
+@mixin md-viewport {
+  @media(max-width: 1023px) and  (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin sm-viewport {
+  @media(max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin media($keys...) {
+  @each $key in $keys {
+    @if $key == sm-viewport {
+      @include sm-viewport {
+        @content;
+      }
+    } @else if $key == md-viewport {
+      @include md-viewport {
+        @content;
+      }
+    } @else if $key == lg-viewport {
+      @include lg-viewport {
+        @content;
+      }
+    }
+  }
+}

@@ -1,18 +1,13 @@
 'use client'
 
 import BankDonationDialogContent from '@/components/help/help-dialogs/bank-donation-dialog-content'
-import EnergyDialogContent from '@/components/help/help-dialogs/energy-dialog-content'
-import MaintainerDialogContent from '@/components/help/help-dialogs/maintainer-dialog-content'
-import PagSeguroDialogContent from '@/components/help/help-dialogs/pag-seguro-dialog-content'
+import DonationDialogContent from '@/components/help/help-dialogs/donation-dialog-content'
 import PrayDialogContent from '@/components/help/help-dialogs/pray-dialog-content'
 import ShareDialogContent from '@/components/help/help-dialogs/share-dialog-content'
 import VolunteerDialogContent from '@/components/help/help-dialogs/volunteer-dialog-content'
 
 export enum HelpOptions {
-  ENERGY = 'energy',
   VOLUNTEER_WORK = 'volunteer-work',
-  PAGSEGURO = 'pagseguro',
-  MAINTAINER = 'maintainer',
   DONATION = 'donation',
   PRAY = 'pray',
   SHARE = 'share',
@@ -21,36 +16,22 @@ export enum HelpOptions {
 
 export const HELP_ITEMS = [
   {
-    id: HelpOptions.ENERGY,
-    title: 'Energia Elétrica',
-    animationUrl:
-      'https://assets7.lottiefiles.com/private_files/lf30_iecf0ukj.json',
-  },
-  {
     id: HelpOptions.VOLUNTEER_WORK,
     title: 'Trabalho voluntário',
     animationUrl:
       'https://assets2.lottiefiles.com/packages/lf20_IXyhboPtFQ.json',
   },
   {
-    id: HelpOptions.PAGSEGURO,
-    title: 'PagSeguro',
-    animationUrl: 'https://assets1.lottiefiles.com/packages/lf20_7ShNC4.json',
-  },
-  {
-    id: HelpOptions.MAINTAINER,
-    title: 'Mantenedor',
-    animationUrl: 'https://assets5.lottiefiles.com/packages/lf20_hpx8arg2.json',
-  },
-  {
     id: HelpOptions.DONATION,
     title: 'Doação',
-    animationUrl: 'https://assets5.lottiefiles.com/packages/lf20_udTJtk.json',
+    animationUrl:
+      'https://lottie.host/d9b4df99-07b7-4b5b-9695-ad01bd3ba835/j2XiRGQgrd.json',
   },
   {
     id: HelpOptions.PRAY,
     title: 'Oração',
-    animationUrl: 'https://assets8.lottiefiles.com/packages/lf20_osjq2dmb.json',
+    animationUrl:
+      'https://lottie.host/2f8c69cf-4455-4dc9-a9f2-ba4f48d392b0/P0PzboHDNS.json',
   },
   {
     id: HelpOptions.SHARE,
@@ -74,26 +55,13 @@ type HelpITemsDialogMapProps = {
 }
 
 export const HELP_ITEMS_DIALOG_MAP: HelpITemsDialogMapProps = {
-  [HelpOptions.ENERGY]: {
-    title: 'Energia Elétrica',
-    description: 'CELESC',
-    content: <EnergyDialogContent />,
-  },
   [HelpOptions.VOLUNTEER_WORK]: {
     title: 'Trabalho voluntário',
     content: <VolunteerDialogContent />,
   },
-  [HelpOptions.PAGSEGURO]: {
-    title: 'PagSeguro',
-    content: <PagSeguroDialogContent />,
-  },
-  [HelpOptions.MAINTAINER]: {
-    title: 'Mantenedor',
-    content: <MaintainerDialogContent />,
-  },
   [HelpOptions.DONATION]: {
     title: 'Doação',
-    content: <EnergyDialogContent />,
+    content: <DonationDialogContent />,
   },
   [HelpOptions.PRAY]: {
     title: 'Oração',

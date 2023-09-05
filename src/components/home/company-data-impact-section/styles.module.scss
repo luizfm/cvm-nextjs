@@ -5,16 +5,28 @@
   padding: 8rem 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 
   .section-title {
     @include heading-lg;
+    font-size: 6rem;
+    text-align: center;
     margin-bottom: 3.2rem;
+    padding: 2.4rem 0;
+    background-color: $color-brand-alternative-300;
+    text-shadow: 0.2rem 0.2rem 0.2rem black;
   }
 
-  .image {
-    margin: 0 auto;
+  .image-wrapper {
+    @include max-width;
+    height: 80rem;
+    width: 100%;
+    position: relative;
+
+    .image {
+      margin: 0 auto;
+      object-fit: cover;
+    }
   }
 }
 

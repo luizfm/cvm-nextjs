@@ -12,7 +12,6 @@ export enum TimelineVariant {
 
 type TimelineCardProps = {
   title: string
-  icon: JSX.Element
   description: string
   variant?: TimelineVariant
   className?: string
@@ -23,7 +22,7 @@ type TimelineCardProps = {
 
 function TimelineCard({
   description,
-  icon,
+
   title,
   variant = TimelineVariant.RIGHT,
   imageUrl,
@@ -49,7 +48,7 @@ function TimelineCard({
           [styles['after-line']]: hasAfterLine,
         })}
       >
-        <div className={styles['icon-wrapper']}>{icon}</div>
+        <div className={styles['timeline-bullet']} />
       </div>
       <Image
         src={imageUrl}
