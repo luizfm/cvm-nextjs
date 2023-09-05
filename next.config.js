@@ -20,10 +20,18 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'images.pexels.com'
-      }
+        hostname: 'images.pexels.com',
+      },
+    ],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '^/api-cvm.luizfm.com/(.*)$',
+        destination: 'http://api-cvm.luizfm.com/$1',
+      },
     ]
-  }
+  },
 }
 
 module.exports = nextConfig
