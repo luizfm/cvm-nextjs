@@ -27,7 +27,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '^/api-cvm.luizfm.com/(.*)$',
+        source: '/api-cvm.luizfm.com/(.*)$',
         destination: 'http://api-cvm.luizfm.com/$1',
       },
     ]
