@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api-cvm.luizfm.com/:path*",
+      "destination": "http://api-cvm.luizfm.com/:path*"
+    }
+  ]
+}
