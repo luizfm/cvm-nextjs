@@ -7,6 +7,10 @@
     {
       "source": "/backoffice/posts/api-cvm.luizfm.com/:path*",
       "destination": "http://api-cvm.luizfm.com/:path*"
+    },
+    {
+      "source": "/news/posts/api-cvm.luizfm.com/:path*",
+      "destination": "http://api-cvm.luizfm.com/:path*"
     }
   ]
 }
