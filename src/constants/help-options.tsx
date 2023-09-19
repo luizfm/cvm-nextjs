@@ -31,7 +31,7 @@ export const HELP_ITEMS = [
     id: HelpOptions.PRAY,
     title: 'Oração',
     animationUrl:
-      'https://lottie.host/2f8c69cf-4455-4dc9-a9f2-ba4f48d392b0/P0PzboHDNS.json',
+      'https://lottie.host/e847521d-c0e3-436f-a618-757ea9d9cbc0/jOv0pqSFoO.json',
   },
   {
     id: HelpOptions.SHARE,
