@@ -35,7 +35,7 @@ const nextConfig = {
         destination: 'http://api-cvm.luizfm.com/$1',
       },
       {
-        source: '/news/posts/api-cvm.luizfm.com/:path*',
+        source: '/news/api-cvm.luizfm.com/:path*',
         destination: 'http://api-cvm.luizfm.com/$1',
       },
     ]
