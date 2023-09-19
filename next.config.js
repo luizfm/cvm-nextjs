@@ -34,6 +34,10 @@ const nextConfig = {
         source: '/backoffice/posts/api-cvm.luizfm.com/:path*',
         destination: 'http://api-cvm.luizfm.com/$1',
       },
+      {
+        source: '/news/posts/api-cvm.luizfm.com/:path*',
+        destination: 'http://api-cvm.luizfm.com/$1',
+      },
     ]
   },
 }
